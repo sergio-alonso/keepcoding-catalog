@@ -15,7 +15,6 @@
   "contributors": [
     "Alberto Casero <acasero@agbotraining.com> (http://www.agbotraining.com)"
   ],
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

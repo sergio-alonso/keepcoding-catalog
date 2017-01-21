@@ -2,6 +2,9 @@
   "name": "@sergioalonso.es/keepcoding-catalog",
   "version": "0.1.0",
   "description": "Keepcoding Catalog",
+  "keywords": [
+    "keepcoding",
+    "frontend"],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

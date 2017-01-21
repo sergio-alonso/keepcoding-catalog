@@ -15,12 +15,12 @@
   "contributors": [
     "Alberto Casero <acasero@agbotraining.com> (http://www.agbotraining.com)"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sergio-alonso/keepcoding-catalog.git"
+    "url": "https://github.com/sergio-alonso/keepcoding-catalog.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "semver": "^5.3.0"

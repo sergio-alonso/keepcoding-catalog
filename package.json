@@ -5,6 +5,7 @@
   "keywords": [
     "keepcoding",
     "frontend"],
+  "homepage": "https://github.com/sergio-alonso/keepcoding-catalog#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,7 +19,6 @@
   "bugs": {
     "url": "https://github.com/sergio-alonso/keepcoding-catalog/issues"
   },
-  "homepage": "https://github.com/sergio-alonso/keepcoding-catalog#readme",
   "devDependencies": {
     "semver": "^5.3.0"
   }

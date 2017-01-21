@@ -12,6 +12,9 @@
   },
   "license": "GPL-3.0",
   "author": "Sergio Alonso <sergio@sergioalonso.es> (http://www.sergioalonso.es)",
+  "contributors": [
+    "Alberto Casero <acasero@agbotraining.com> (http://www.agbotraining.com)"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

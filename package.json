@@ -27,8 +27,9 @@
   "scripts": {
     "env": "env",
     "start": "npm run build && npm run sync & npm run watch",
+    "build:css": "node-sass $npm_package_config_source/*.scss -o $npm_package_config_dest",
     "build:html": "pug --no-debug $npm_package_config_source/*.pug --out $npm_package_config_dest",
-    "build": "npm run build:html",
+    "build": "npm run build:html & npm run build:css",
     "watch": "watch 'npm run build' $npm_package_config_source",
     "sync": "browser-sync start --server --serveStatic $npm_package_config_dest --files $npm_package_config_dest",
     "clean": "rm -fr $npm_package_config_dest/*"

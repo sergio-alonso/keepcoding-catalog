@@ -21,7 +21,6 @@
     "url": "https://github.com/sergio-alonso/keepcoding-catalog.git"
   },
   "config": {
-    "port": "8080",
     "source": "src/",
     "dest": "public/"
   },

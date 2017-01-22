@@ -30,6 +30,7 @@
     "start": "npm run build && serve --port $npm_package_config_port $npm_package_config_dest",
     "build:html": "pug --no-debug $npm_package_config_source/*.pug --out $npm_package_config_dest",
     "build": "npm run build:html",
+    "clean": "rm -fr $npm_package_config_dest/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

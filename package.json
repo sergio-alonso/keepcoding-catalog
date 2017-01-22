@@ -20,15 +20,17 @@
     "type": "git",
     "url": "https://github.com/sergio-alonso/keepcoding-catalog.git"
   },
+  "config": {
+    "port": "8080",
+    "dest": "public/"
+  },
   "scripts": {
     "env": "env",
-    "start": "serve ./public/",
+    "start": "serve --port $npm_package_config_port $npm_package_config_dest",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "config": {
-    "port": "8080"
-  },
   "devDependencies": {
+    "npm-config": "^0.2.0",
     "semver": "^5.3.0"
   },
   "dependencies": {

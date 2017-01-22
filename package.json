@@ -22,6 +22,7 @@
   },
   "scripts": {
     "env": "env",
+    "start": "serve ./public/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "config": {

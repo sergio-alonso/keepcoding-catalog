@@ -1,16 +1,20 @@
-header
-  img(alt="Legado Educativo logo", src="logo.png")
-  hgroup
-    h1
-      a(href="#") Legado Educativo
-    h2 Recursos Educativos Abiertos
-  include nav.pug
-  form
-    fieldset
-      legend Search
-      label(for="search-input") Search
-      input(type="search", id="search-input", name="search-input")
-      input(type="submit", value="Search")
-  img(alt="Show menu", src="menu.png")
-  img(alt="Login", src="login.png")
-  img(alt="Signup", src="signup.png")
+header.page-header
+  span.glyphicon.glyphicon-education(aria-hidden="true")
+  span.sr-only Logo
+  // hgroup
+  //   h1
+  //     a(href="#") Legado Educativo
+  //   h2 Recursos Educativos Abiertos
+  // include nav.pug
+  // form
+  //   fieldset
+  //     legend Search
+  //     label(for="search-input") Search
+  //     input(type="search", id="search-input", name="search-input")
+  //     input(type="submit", value="Search")
+  span.glyphicon.glyphicon-menu-hamburger(aria-hidden="true")
+  span.sr-only Menu
+  span.glyphicon.glyphicon-search(aria-hidden="true")
+  span.sr-only Search
+  span.glyphicon.glyphicon-log-in(aria-hidden="true")
+  span.sr-only Login

@@ -1,20 +1,20 @@
 header.page-header
   span.glyphicon.glyphicon-education(aria-hidden="true")
   span.sr-only Logo
-  // hgroup
-  //   h1
-  //     a(href="#") Legado Educativo
-  //   h2 Recursos Educativos Abiertos
-  // include nav.pug
-  // form
-  //   fieldset
-  //     legend Search
-  //     label(for="search-input") Search
-  //     input(type="search", id="search-input", name="search-input")
-  //     input(type="submit", value="Search")
+  hgroup.hidden-xs
+    h1
+      a(href="#") Legado Educativo
+    h2 Recursos Educativos Abiertos
+  include nav.pug
   span.glyphicon.glyphicon-menu-hamburger(aria-hidden="true")
   span.sr-only Menu
-  span.glyphicon.glyphicon-search(aria-hidden="true")
+  form.hidden-xs
+    fieldset
+      legend Search
+      label(for="search-input") Search
+      input(type="search", id="search-input", name="search-input")
+      input(type="submit", value="Search")
+  span.glyphicon.glyphicon-search.visible-xs(aria-hidden="true")
   span.sr-only Search
   span.glyphicon.glyphicon-log-in(aria-hidden="true")
   span.sr-only Login

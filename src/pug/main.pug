@@ -1,19 +1,30 @@
 main.page-main
   section.row.masonry-container
     - for (var i=0; i<16; i++)
-      article.col-xs-6.col-sm-4.item
+      article.col-xs-6.col-sm-4.col-md-3.item
         .resource.thumbnail
-          header.hidden-xs
+          header.hidden-xs.caption
             h1= "Titulo " + i
-            time(pubdate="pubdate", datetime="2009-10-10T19:15-08:00") ~1 hour ago
           if Math.round(Math.random() * 100) % 2 == 0
             img.img-responsive(src="http://placehold.it/148x210")
           else
             img.img-responsive(src="http://placehold.it/210x148")
-          footer.hidden-xs
-            address
-              span By:
-              a(href="mailto:user@example.com") A User
-              img.img-responsive(src="http://placehold.it/60x60")
-            a(href="#") Me gusta
-            a(href="#") 200 comentarios
+          p.hidden-xs.caption Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum odio blandit tellus auctor, sed tempor elit commodo.
+          footer.hidden-xs.caption
+            .author-info
+              .author-photo
+                img.img-responsive(src="http://placehold.it/60x60")
+              .author-icons
+                .author-icon
+                  span User Name
+                  span.glyphicon.glyphicon-user
+                .calendar-icon.text-left
+                  time(pubdate="pubdate", datetime="2009-10-10T19:15-08:00") ~1 hour ago
+                  span.glyphicon.glyphicon-calendar
+            .action-icons
+              .pin-icon
+                span.glyphicon.glyphicon-pushpin
+                span.badge= Math.round(Math.random()*100)
+              .comments-icon
+                span.glyphicon.glyphicon-comment
+                span.badge= Math.round(Math.random()*100)

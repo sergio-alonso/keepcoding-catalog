@@ -2,4 +2,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #fff;
+}
+
+.copy-left {
+display: inline-block;
+text-align: right;
+margin: 0;
+transform: scaleX(-1);
+filter: FlipH;
 }

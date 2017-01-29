@@ -9,20 +9,19 @@ header.page-header
       h2 Recursos Educativos Abiertos
 
 
-    include nav.pug
-    
-    span.glyphicon.glyphicon-menu-hamburger(aria-hidden="true")
-    span.sr-only Menu
-
-
     form.hidden-xs
       fieldset
         input(type="search", id="search-input", name="search-input")
         input(type="submit", value="Search")
 
-
     span.glyphicon.glyphicon-search.hidden-xs.hidden-md(aria-hidden="true")
     span.sr-only Search
+
+
+    include nav.pug
+
+    span.glyphicon.glyphicon-menu-hamburger(aria-hidden="true")
+    span.sr-only Menu
 
 
     span.glyphicon.glyphicon-log-in(aria-hidden="true")

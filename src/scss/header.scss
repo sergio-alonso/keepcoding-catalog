@@ -1,5 +1,8 @@
-.page-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+body {
+  // The fixed navbar will overlay your other content
+  padding-top: 70px;
+}
+
+.navbar-form input {
+    border: 1px solid #ccc;
 }

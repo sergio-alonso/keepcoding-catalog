@@ -1,16 +1,15 @@
-main
-  section
-    header
-      h1 Search Results
-    article
-      header
-        h1 First Result
-      p First content
-      footer
-        p Like
-    article
-      header
-        h1 Second Result
-      p Second content
-      footer
-        p Like
+main.page-main
+  section.row.masonry-container
+    - for (var i=0; i<16; i++)
+      article.col-xs-6.col-sm-4.item
+        .thumbnail
+          header.hidden-xs= "Titulo " + i
+          if Math.round(Math.random() * 100) % 2 == 0
+            img.img-responsive(src="http://placehold.it/148x210")
+          else
+            img.img-responsive(src="http://placehold.it/210x148")
+
+
+
+
+//        a.thumbnail(href="#")

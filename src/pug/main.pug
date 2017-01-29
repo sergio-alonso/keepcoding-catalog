@@ -2,14 +2,18 @@ main.page-main
   section.row.masonry-container
     - for (var i=0; i<16; i++)
       article.col-xs-6.col-sm-4.item
-        .thumbnail
-          header.hidden-xs= "Titulo " + i
+        .resource.thumbnail
+          header.hidden-xs
+            h1= "Titulo " + i
+            time(pubdate="pubdate", datetime="2009-10-10T19:15-08:00") ~1 hour ago
           if Math.round(Math.random() * 100) % 2 == 0
             img.img-responsive(src="http://placehold.it/148x210")
           else
             img.img-responsive(src="http://placehold.it/210x148")
-
-
-
-
-//        a.thumbnail(href="#")
+          footer.hidden-xs
+            address
+              span By:
+              a(href="mailto:user@example.com") A User
+              img.img-responsive(src="http://placehold.it/60x60")
+            a(href="#") Me gusta
+            a(href="#") 200 comentarios

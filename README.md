@@ -2,6 +2,8 @@
 
 Make Web Stuff Right
 
+To get the job done, we need a solid foundation, and best practices by default.
+
 ## Rapid Prototyping
 
 - Idea: requirements

@@ -1,1 +1,28 @@
+.author-info {
+    display: flex;
+}
 
+.author-icons {
+    flex:2;
+    display:flex;
+    flex-direction: column;
+}
+
+.author-icon {
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+.calendar-icon {
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+}
+
+.action-icons {
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    margin-top:15px;
+}

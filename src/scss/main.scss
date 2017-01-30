@@ -1,3 +1,18 @@
+
+.summary {
+    display: block;
+    display: -webkit-box;
+    height: 16*1.4*3+8px;
+    font-size: 16px;
+    line-height: 1.4;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:wrap;
+    max-width: 300px;
+}
+
 .author-info {
     display: flex;
 }

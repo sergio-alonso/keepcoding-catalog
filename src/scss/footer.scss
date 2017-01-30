@@ -1,18 +1,14 @@
+.opaque {
+    background-color: #fff;
+}
+
 .page-footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
-}
-
-.page-footer > span {
-    margin-right: 8px;
 }
 
 .copy-left {
-    display: inline-block;
-    text-align: right;
-    margin: 0;
     transform: scaleX(-1);
     filter: FlipH;
 }

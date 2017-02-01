@@ -1,5 +1,7 @@
 $(document).ready(function(){
   $('.resource').on('click', function(e) {
-    alert(1);
+     $("#detail-view").modal({
+       remote: 'detail.html'
+     });
   });
 });

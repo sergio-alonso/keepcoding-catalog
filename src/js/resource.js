@@ -3,5 +3,6 @@ $(document).ready(function(){
      $("#detail-view").modal({
        remote: 'detail.html'
      });
+    loadData();
   });
 });

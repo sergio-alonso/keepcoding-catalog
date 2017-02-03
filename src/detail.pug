@@ -1,6 +1,6 @@
 div.detail-content
   header.caption
-    h1 Titulo
+    h1 Lorem ipsum dolor sit amet
     img.img-responsive(src="http://placehold.it/210x148")
 
 
@@ -37,21 +37,10 @@ div.detail-content
 
 aside.detail-comments
 
-  form
+  form#comment-form
     textarea(name='comment',id='comment', placeholder='Comentario')
     input(type='hidden', name='resource-id' id='resource-id' value='0')
     input(type='hidden', name='user-id' id='user-id' value='user@example.com')
-    button.btn.btn-default Comentar
+    input.btn.btn-default(type='submit', value='Comentar')
 
-  ul
-    li.comment Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius.
-    li.comment Quid est, quod ab ea absolvi et perfici debeat?
-    li.comment Eorum enim omnium multa praetermittentium, dum eligant aliquid, quod sequantur, quasi curta sententia;
-    li.comment Quid enim de amicitia statueris utilitatis causa expetenda vides.
-    li.comment De ingenio eius in his disputationibus, non de moribus quaeritur.
-    li.comment Tria genera cupiditatum, naturales et necessariae, naturales et non necessariae, nec naturales nec necessariae.
-    li.comment Illud urgueam, non intellegere eum quid sibi dicendum sit, cum dolorem summum malum esse dixerit.
-    li.comment Quod quoniam in quo sit magna dissensio est, Carneadea nobis adhibenda divisio est, qua noster Antiochus libenter uti solet.
-    li.comment Videmusne ut pueri ne verberibus quidem a contemplandis rebus perquirendisque deterreantur?
-    li.comment Atqui iste locus est, Piso, tibi etiam atque etiam confirmandus, inquam;
-
+  div#detail-comments

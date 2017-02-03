@@ -5,8 +5,12 @@
     @media(min-width:768px){
 	flex-direction: row;
 	height: 90vh;
-	width: 75vw;
     }
+}
+
+.centered {
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .detail-content {
@@ -17,16 +21,32 @@
     align-content: stretch;
 }
 
+.detail-content > header > img {
+    width: 100%;
+}
+
+.detail-content > header > h1 {
+    text-transform: uppercase;
+}
+
 .detail-comments {
-    margin-left: 2em;
-    padding-left: 2em;
-    border-left: 1px solid #ccc;
     overflow: auto;
-    width: 150%;
+    border-top: 1px solid #ccc;
+    margin: 1em 0 0 0;
+    padding: 1em 0 0 0;
+    @media(min-width:768px){
+	border-left: 1px solid #ccc;
+	border-top: 0px solid #ccc;
+	margin: 0 0 0 1em;
+	padding: 0 0 0 1em;
+    }
+}
+
+.detail-comments > textarea {
+    width: 100%;
 }
 
 .detail-comments .comment {
-    border: 0px solid #ccc;
-    margin: 1em;
-    padding: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
 }

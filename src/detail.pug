@@ -37,10 +37,10 @@ div.detail-content
 
 aside.detail-comments
 
-  form
+  form#comment-form
     textarea(name='comment',id='comment', placeholder='Comentario')
     input(type='hidden', name='resource-id' id='resource-id' value='0')
     input(type='hidden', name='user-id' id='user-id' value='user@example.com')
-    button.btn.btn-default Comentar
+    input.btn.btn-default(type='submit', value='Comentar')
 
   div#detail-comments

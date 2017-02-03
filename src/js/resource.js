@@ -1,8 +1,11 @@
-$(document).ready(function(){
-  $('.resource').on('click', function(e) {
-     $("#detail-view").modal({
-       remote: 'detail.html'
-     });
+function showResource(event) {
+    $("#detail-view").modal({
+      remote: 'detail.html'
+    });
     loadData();
-  });
+    saveData();
+}
+
+$(document).ready(function(){
+  $('.resource').on('click', showResource)
 });

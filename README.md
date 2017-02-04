@@ -2,6 +2,8 @@
 
 To get the job done, we need a solid foundation, and best practices by default.
 
+## Code Reuse
+
 ## Rapid Prototyping
 
 - Idea: requirements

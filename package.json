@@ -20,13 +20,14 @@
     "type": "git",
     "url": "https://github.com/sergio-alonso/keepcoding-catalog.git"
   },
+  "main": "index.js",
   "config": {
     "source": "src/",
     "dest": "public/"
   },
   "scripts": {
     "env": "env",
-    "start": "npm run build && npm run server & npm run sync & npm run watch",
+    "start": "npm run build && npm run server & npm run watch",
     "build:ico": "cp $npm_package_config_source/ico/*.ico $npm_package_config_dest/",
     "build:js": "cat $npm_package_config_source/js/*.js > $npm_package_config_dest/script.js",
     "build:css": "node-sass $npm_package_config_source/*.scss -o $npm_package_config_dest",
@@ -37,8 +38,7 @@
     "watch:css": "nodemon -e scss -x 'npm run build:css'",
     "watch:html": "nodemon -e pug -x 'npm run build:html'",
     "watch": "npm run watch:html & npm run watch:css & npm run watch:js & npm run watch:ico",
-    "server": "json-server --watch src/db.json --static $npm_package_config_dest --port 4000",
-    "sync": "browser-sync start --proxy --files $npm_package_config_dest --no-open",
+    "server": "node index",
     "clean": "rm -fr $npm_package_config_dest/*"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
-var url = "http://" + location.host + "/db";
-var url_comments = "http://" + location.host + "/comments";
+var api = "http://" + location.host + "/api";
+var url = api + "/comments";
 var comments = $('<ul/>', {class: "comments"});
 
 function loadComment(i, item) {
@@ -7,7 +7,7 @@ function loadComment(i, item) {
 }
 
 function loadComments(data) {
-  $.each(data.comments, loadComment);
+  $.each(data, loadComment);
   $('#detail-comments').append(comments);
 }
 
@@ -19,7 +19,7 @@ function loadData() {
 function saveComment(comment) {
   jQuery.ajax({
     type: "POST",
-    url: url_comments,
+    url: url,
     dataType: 'json',
     data: comment,
     success: function (data) {

@@ -11,16 +11,22 @@ To get the job done, we need a solid foundation, and best practices by default.
 - Wirefrime: [Balsamiq](http://mybalsamiq.com)
 - Prototype: [Bootstrap](http://getbootstrap.com/) 
 
+## Start development environment
+
+```bash
+git clone 
+npm install
+npm start
+```
+
+Now you can go to [http://localhost:3000/]() with your web browser.
+Or [http://localhost:3000/api/db]() to access database through API.
+
+
 ## Get a list of the avaliable commands to run
 
 ```bash
 npm run
-```
-
-## Start development environment
-
-```bash
-npm start
 ```
 
 # Thanks to

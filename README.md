@@ -1,6 +1,4 @@
-# keepcoding-prototype
-
-Make Web Stuff Right
+# keepcoding-prototype - Responsive Front-End Prototype
 
 To get the job done, we need a solid foundation, and best practices by default.
 

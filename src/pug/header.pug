@@ -11,14 +11,13 @@ header
         a.navbar-brand(href="#") Legado Educativo
 
       #navbar-collapsible.navbar-collapse.collapse
-        ul.nav.navbar-nav.navbar-left
+        ul.nav.navbar-nav
           li
             a(href="#") Todos los recursos
           li
             a(href="#") Mis recursos
           li
             a(href="#") Personas
-
 
         form.navbar-form.navbar-left(role="search")
           .form-group
@@ -28,10 +27,12 @@ header
               span.sr-only Search
 
 
-        button#register.navbar-right.btn.btn-default.navbar-btn(type="button")
-          span.glyphicon.glyphicon-plus(aria-hidden="true")
-          span.sr-only SignUp
-
-        button#login.navbar-right.btn.btn-default.navbar-btn(type="button")
-          span.glyphicon.glyphicon-log-in(aria-hidden="true")
-          span.sr-only Login
+        ul.nav.navbar-nav.navbar-right
+	  li
+            button#register.btn.btn-default.navbar-btn(type="button")
+              span.glyphicon.glyphicon-plus(aria-hidden="true")
+              span.sr-only SignUp
+          li
+            button#login.btn.btn-default.navbar-btn(type="button")
+              span.glyphicon.glyphicon-log-in(aria-hidden="true")
+              span.sr-only Login

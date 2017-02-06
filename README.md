@@ -33,6 +33,7 @@ npm run
 - [Bootstrap CDN](https://www.bootstrapcdn.com/)
 - [Bootstrap Themes](http://getbootstrap.com/)
 - [Bootstrap Snippets](http://bootsnipp.com/)
+- [Moment.js](http://momentjs.com/)
 
 # Todo
 - Bootlint

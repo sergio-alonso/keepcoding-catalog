@@ -1,3 +1,5 @@
+var moment = require('../../node_modules/moment/min/moment-with-locales.min.js');
+
 (function () {
 var updateRelativeDates = function() {
   $('time').each(function (i, e) {

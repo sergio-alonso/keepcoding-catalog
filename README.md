@@ -42,6 +42,8 @@ npm run
 http://bootswatch.com/help/
 http://www.smashingmagazine.com/2013/03/12/customizing-bootstrap/
 
+- Best practice for managing JavaScript libraries
+
 # Gallery
 Masonry layout grid and lightbox modal
 This layout mode allows placing image thumbnails in optimal, responsive grid, so your gallery will look like a stone wall, where gallery items will be stones. Also there is a slider lightbox popup for viewing them.

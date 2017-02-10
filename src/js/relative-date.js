@@ -7,7 +7,7 @@ var updateRelativeDates = function() {
 
       // Initialise momentjs
       var now = moment();
-      moment.locale('es', {
+      moment.updateLocale('es', {
         calendar : {
           lastWeek : 'dddd',
           sameElse : 'D MMM YYYY'

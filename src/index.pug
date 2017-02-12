@@ -1,0 +1,22 @@
+doctype html
+html(lang=es)
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0")
+    title Legado Educativo - Prototypes
+    link(href="/favicon.ico" rel="icon" type="image/x-icon")
+    link(href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/fonts/lg.ttf")
+    link(href="style.css", rel="stylesheet")
+  body
+    #lightgallery
+      a(href="png/google.png")
+        img(src="png/google.png")
+      a(href="png/yahoo.png" data-sub-html="#caption1" data-src="http://localhost:3000/page-search-result.html")
+        #caption1(style="display:none")
+          h4 Sunset Serenity
+          p A gorgeous Sunset tonight captured at Coniston Water....
+        img(src="png/yahoo.png")
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="index.js")

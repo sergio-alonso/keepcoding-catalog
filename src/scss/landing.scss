@@ -1,0 +1,53 @@
+.jumbotron {
+    padding: 3em 6em;
+}
+
+.mt-3 {
+    margin-top: 3em;
+}
+
+.mb-3 {
+    margin-bottom: 3em;
+}
+
+.benefits {
+    background: #eee;
+    padding: 3em;
+    align-items: center;
+}
+
+.benefit {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #999;
+}
+
+.benefit:last-child {
+    border: 0px solid #999;
+}
+
+.benefit > img {
+    width: 120px;
+    height: 120px;
+}
+
+.benefit > * {
+    padding: 0.5em
+}
+
+.center-item {
+    align-self: center;
+}
+
+.social-proof {
+    padding: 3em;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.call-to-action {
+}

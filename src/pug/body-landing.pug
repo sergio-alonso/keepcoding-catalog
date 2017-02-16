@@ -1,38 +1,41 @@
 .jumbotron
   .row
-    .col-md-8
+    .col-md-6
       h1 Personas mejorando la educación
-      h2 Crea recursos didacticos para la docencia de forma colaborativa y sencilla en minutos.
-
-    .col-md-4.call-to-action
+      h2.mt-3 Crea recursos didacticos para la docencia de forma colaborativa y sencilla en minutos.
+    .col-md-1
+    .col-md-4.mt-3.call-to-action
       form
         input(type="email", placeholder="nombre@ejemplo.com")
-        button.btn(type="submit") Quiero crear mis propios recursos
+        button.btn.mt-3(type="submit") Quiero crear mis propios recursos
 
 .reinforcement-statement
-  h3 Recursos libres para una educación libre
-  p Un espacio único para crear recursos educativos libres de forma colaborativa. Podrás disponer de todo el material necesario para tus clases en cuestión de minutos. Distribuye el  material con total libertad, siempre. Tus alumnos te lo agradecerán.
+  .row
+    .col-md-2
+    .col-md-8
+      h3 Recursos libres para una educación libre
+      p.mt-3 Un espacio único para crear recursos educativos libres de forma colaborativa. Podrás disponer de todo el material necesario para tus clases en cuestión de minutos. Distribuye el  material con total libertad, siempre. Tus alumnos te lo agradecerán.
 
-.benefits
+.benefits.mt-3
   .row
     .col-md-4.benefit
-      img.img-responsive(src="http://placehold.it/60x60")
+      img.center-item(src="http://placehold.it/60x60")
       h4 Para todo lo que construyas
       p Aloja y administra todo el material. Puedes manterner tu trabajo en privado o compartirlo con el mundo.
 
     .col-md-4.benefit
-      img.img-responsive(src="http://placehold.it/60x60")
+      img.center-item.img-responsive(src="http://placehold.it/60x60")
       h4 Una mejor manera de trabajar
       p Te ayudamos simplificando la forma en la que creas y distribuyes tu material.
 
     .col-md-4.benefit
-      img.img-responsive(src="http://placehold.it/60x60")
+      img.center-item.img-responsive(src="http://placehold.it/60x60")
       h4 Una gran comunidad
       p Encontraras una gran cantidad de material. Utilizalo o inspirate para crear el tuyo propio.
 
-.social-proof
+.social-proof.mt-3
   h3 ¿Quien usa recursos educativos abiertos?
-  .row
+  .row.mt-3
     .col-md-4.proof
       h4 Estudiantes
       p Crear tu propio material de apoyo en tus estudios. Mejora tu rendimiento escolar.
@@ -45,7 +48,6 @@
       h4 Centros educativos
       p Gestiona todo el material que necesitas en tus aulas. Promueve el intercambio transparente de recursos educativos.
 
-.call-to-action
-  form
-    input(type="email", placeholder="nombre@ejemplo.com")
-    button.btn(type="submit") Quiero crear mis propios recursos
+.call-to-action.mt-3.mb-3
+  form.flex-col.center-item
+    button.btn.center-item(type="submit") Quiero crear mis propios recursos

@@ -1,5 +1,10 @@
-.jumbotron {
-    padding: 3em 6em;
+main {
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.mt-1 {
+    margin-top: 1em;
 }
 
 .mt-3 {
@@ -10,44 +15,17 @@
     margin-bottom: 3em;
 }
 
+.jumbotron {
+    width: 100vw;
+    height: 90vh;
+    padding-top:6em;
+}
+
 .benefits {
     background: #eee;
-    padding: 3em;
-    align-items: center;
 }
 
-.benefit {
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #999;
-}
-
-.benefit:last-child {
-    border: 0px solid #999;
-}
-
-.benefit > img {
-    width: 120px;
-    height: 120px;
-}
-
-.benefit > * {
-    padding: 0.5em
-}
-
-.center-item {
-    align-self: center;
-}
-
-.social-proof {
-    padding: 3em;
-}
-
-.flex-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.call-to-action {
+.benefit > *,
+.proof > * {
+    padding: 0.5em 0;
 }

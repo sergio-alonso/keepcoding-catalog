@@ -3,7 +3,7 @@
   article.col-xs-6.col-sm-4.col-md-3.item
     .resource.thumbnail
       header.hidden-xs.caption
-        h1.wd200.tooltipfy= "Titulo " + i + "very long long long title but long enough"
+        h1.wd200.tooltipfy= "Titulo " + i
       if Math.round(Math.random() * 100) % 2 == 0
         img.img-responsive(src="http://placehold.it/148x210")
       else
@@ -15,7 +15,7 @@
             img.img-responsive.img-rounded(src="http://placehold.it/60x60")
           .author-icons
             .author-icon
-              span User Name
+              span Nombre Apellido
               span.glyphicon.glyphicon-user
             .calendar-icon.text-left
               time.relative-date(pubdate="pubdate", datetime= randomDate)

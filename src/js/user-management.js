@@ -55,11 +55,18 @@ function setRegisterButtonStyle() {
 
 
 
+function showLogin(event) {
+    $("#login-view").modal({
+      remote: 'modal-login.html'
+    });
+}
 
 function isUserLoged() {
   return sessionStorage.hasOwnProperty('user');
 }
+
 function onUserLogin() {
+  showLogin();
   if(isUserLoged()) {
     sessionStorage.removeItem('user');
   } else {

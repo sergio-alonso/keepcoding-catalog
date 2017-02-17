@@ -29,7 +29,7 @@
     "env": "env",
     "start": "npm run build && npm run server & npm run watch",
     "build:ico": "cp $npm_package_config_source/ico/*.ico $npm_package_config_dest/",
-    "build:js": "browserify $npm_package_config_source/js/index.js > $npm_package_config_dest/index.js",
+    "build:js": "browserify $npm_package_config_source/index.js > $npm_package_config_dest/index.js",
     "build:css": "node-sass $npm_package_config_source/index.scss -o $npm_package_config_dest && node-sass $npm_package_config_source/style.scss -o $npm_package_config_dest",
     "build:html": "pug --no-debug $npm_package_config_source/*.pug --out $npm_package_config_dest",
     "build": "npm run build:html & npm run build:css & npm run build:js & npm run build:ico",

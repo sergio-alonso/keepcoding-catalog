@@ -61,7 +61,8 @@
     "lg-zoom.js": "^1.0.1",
     "lightgallery.js": "^1.0.1",
     "moment": "^2.17.1",
-    "serve": "^2.4.3"
+    "serve": "^2.4.3",
+    "tagmanager": "^1.0.0"
   },
   "engines": {
     "npm": ">=3.10"

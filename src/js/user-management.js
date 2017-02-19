@@ -32,6 +32,7 @@ function isUserRegistered() {
 
 // On register button click
 function onUserRegister() {
+  showRegister();
   if(isUserRegistered()) {
     localStorage.removeItem('user');
   } else {
@@ -49,6 +50,12 @@ function setRegisterButtonStyle() {
   }
   $("#register > span.glyphicon").removeClass("glyphicon-minus");
   $("#register > span.glyphicon").addClass("glyphicon-plus");
+}
+
+function showRegister(event) {
+    $("#register-view").modal({
+      remote: 'modal-register.html'
+    });
 }
 
 

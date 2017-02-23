@@ -39,7 +39,7 @@
     "watch:html": "nodemon -e pug -x 'npm run build:html'",
     "watch": "npm run watch:html & npm run watch:css & npm run watch:js & npm run watch:ico",
     "server": "node index",
-    "clean": "rm -fr $npm_package_config_dest/*"
+    "clean": "rm -fr $npm_package_config_dest/*; rm -fr *.tar"
   },
   "devDependencies": {
     "browser-sync": "^2.18.6",

@@ -6,6 +6,5 @@ function incrementLike(id) {
 
 $(".pin-icon").click(function (e) {
   e.stopPropagation();
-  // console.log($(this).attr("resource-id"));
   incrementLike($(this).attr("resource-id"));
 });

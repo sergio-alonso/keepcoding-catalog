@@ -32,6 +32,7 @@ function isUserRegistered() {
 
 // On register button click
 function onUserRegister() {
+  showRegister();
   if(isUserRegistered()) {
     localStorage.removeItem('user');
   } else {
@@ -51,15 +52,28 @@ function setRegisterButtonStyle() {
   $("#register > span.glyphicon").addClass("glyphicon-plus");
 }
 
+function showRegister(event) {
+    $("#register-view").modal({
+      remote: 'modal-register.html'
+    });
+}
 
 
 
 
+
+function showLogin(event) {
+    $("#login-view").modal({
+      remote: 'modal-login.html'
+    });
+}
 
 function isUserLoged() {
   return sessionStorage.hasOwnProperty('user');
 }
+
 function onUserLogin() {
+  showLogin();
   if(isUserLoged()) {
     sessionStorage.removeItem('user');
   } else {

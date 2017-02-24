@@ -1,6 +1,6 @@
 header
 
-  nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+  nav.navbar-default.navbar-fixed-top(role="navigation")
     .container-fluid
       .navbar-header
         button.navbar-toggle(type="button", data-toggle="collapse", data-target="#navbar-collapsible")
@@ -8,25 +8,13 @@ header
           span.icon-bar
           span.icon-bar
           span.icon-bar
-        a.navbar-brand(href="#") Legado Educativo
+        a.navbar-brand(href="page-landing.html") Legado Educativo
 
       #navbar-collapsible.navbar-collapse.collapse
         ul.nav.navbar-nav
           li
-            a(href="#") Todos los recursos
-          li
-            a(href="#") Mis recursos
-          li
-            a(href="#") Personas
-
-        form.navbar-form.navbar-left(role="search")
-          .form-group
-            input.form-control(type="search")
-            button.btn.btn-default(type="submit")
-              span.glyphicon.glyphicon-search(aria-hidden="true")
-              span.sr-only Search
-
-
+            a(href="page-search-result.html") Explora
+      
         ul.nav.navbar-nav.navbar-right
           li
             button#register.btn.btn-default.navbar-btn(type="button")

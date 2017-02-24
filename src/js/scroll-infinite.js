@@ -1,11 +1,11 @@
 function scrollInfinite() {
   if ($(document).height() - $(window).height() == $(window).scrollTop()) {
     $.ajax({
-      url: 'index-next.html',
+      url: 'resources.html',
       dataType: 'html',
       success: function(html) {
         var data = $(html);
-        $('.scroll-infinite').append(data).masonry('appended', data, true);
+        $('.scroll-infinite').masonry().append(data).masonry('appended', data);
       },
       error: function() {
         console.log("error...");

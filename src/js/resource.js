@@ -43,7 +43,7 @@ function saveData() {
 
 function showResource(event) {
     $("#detail-view").modal({
-      remote: 'detail.html'
+      remote: 'page-resource-detail.html'
     });
     loadData();
     saveData();

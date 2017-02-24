@@ -1,0 +1,50 @@
+body {
+    overflow-x: hidden;
+}
+
+.pl-3 {
+    padding-left: 3em;
+}
+
+.pr-3 {
+    padding-right: 3em;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.mt-2 {
+    margin-top: 2em;
+}
+
+.mt-3 {
+    margin-top: 3em;
+}
+
+.mb-3 {
+    margin-bottom: 3em;
+}
+
+.jumbotron {
+    width: 100vw;
+    height: 90vh;
+    padding-top:6em;
+}
+
+.reinforcement-statement {
+    background: #fefefe;
+}
+
+.benefits {
+    background: #eee;
+}
+
+.benefit > *,
+.proof > * {
+    padding: 0.5em 0;
+}
+
+.social-proof {
+    bakground: #fefefe;
+}

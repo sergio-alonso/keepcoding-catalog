@@ -125,3 +125,5 @@ jspm_packages
 
 # End of https://www.gitignore.io/api/linux,emacs,git,sass,node
 public/
+.cookies
+*.tar

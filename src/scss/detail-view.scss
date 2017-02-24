@@ -1,4 +1,10 @@
-.modal-content {
+body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+  
+.modal-detail {
     padding: 2em;
     display: flex;
     flex-direction: column;

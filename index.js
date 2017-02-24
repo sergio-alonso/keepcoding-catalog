@@ -9,6 +9,7 @@ bs.init({
     ui: false,
     files: './public',
     open: false,
+    notify: false,
     server: {
         baseDir: './public'
     }

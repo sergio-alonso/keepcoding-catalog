@@ -4,7 +4,14 @@ function incrementLike(id) {
   localStorage.setItem(id, count);
 }
 
-$(".pin-icon").click(function (e) {
-  e.stopPropagation();
-  incrementLike($(this).attr("resource-id"));
+function removeFromPage(id) {
+  $(".masonry-container").masonry('remove', $('#'+id)).masonry('layout');
+}
+
+$(document).ready(function(){
+  $(".pin-icon").click(function (e) {
+    e.stopPropagation();
+    incrementLike($(this).attr("resource-id"));
+    removeFromPage($(this).attr("resource-id"));
+  });
 });

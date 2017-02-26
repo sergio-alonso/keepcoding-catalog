@@ -61,6 +61,9 @@
   "browserify": {
     "transform": [ "browserify-shim" ]
   },
+  "browserify-shim": {
+    "jquery": "global:$"
+  },
   "engines": {
     "npm": ">=3.10"
   },

@@ -58,6 +58,9 @@
     "serve": "^2.4.3",
     "tagmanager": "^1.0.0"
   },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
   "engines": {
     "npm": ">=3.10"
   },

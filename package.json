@@ -54,15 +54,17 @@
     "semver": "^5.3.0"
   },
   "dependencies": {
-    "moment": "^2.17.1",
     "serve": "^2.4.3",
     "tagmanager": "^1.0.0"
   },
   "browserify": {
-    "transform": [ "browserify-shim" ]
+    "transform": [
+      "browserify-shim"
+    ]
   },
   "browserify-shim": {
-    "jquery": "global:$"
+    "jquery": "global:$",
+    "moment": "global:moment"
   },
   "engines": {
     "npm": ">=3.10"

@@ -1,4 +1,4 @@
-var moment = require('../../node_modules/moment/min/moment-with-locales.min.js');
+var moment = require('moment');
 
 (function () {
 var updateRelativeDates = function() {

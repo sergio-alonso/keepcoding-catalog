@@ -6,6 +6,17 @@ function incrementLike(id) {
 
 function removeFromPage(id) {
   $(".masonry-container").masonry('remove', $('#'+id)).masonry('layout');
+  $.ajax({
+    url: 'resource.html',
+    dataType: 'html',
+    success: function(html) {
+      var data = $(html);
+      $('.masonry-container').masonry().append(data).masonry('appended', data);
+    },
+    error: function() {
+      console.log("error...");
+    }
+  });
 }
 
 $(document).ready(function(){

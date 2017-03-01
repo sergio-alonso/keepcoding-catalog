@@ -1,16 +1,16 @@
-var coreLog = function(core) {
-  'use strict';
+var coreLog = function( core ) {
+  "use strict";
 
-  var debug = function(message) {
-    console.log(message);
+  var debug = function( message ) {
+    console.log( message );
   };
 
-  var error = function(message) {
-    console.error(message);
+  var error = function( message ) {
+    console.error( message );
   };
 
   var init = function() {
-    console.log("extension::log::init()");
+    console.log( "extension::log::init()" );
     core.log = this;
     core.sandbox.log = this;
   };
@@ -22,6 +22,6 @@ var coreLog = function(core) {
   };
 };
 
-var Core = require('./framework-core');
-Core.use('log', coreLog);
+var Core = require( "./framework-core" );
+Core.use( "log", coreLog );
 

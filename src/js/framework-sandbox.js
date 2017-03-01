@@ -1,7 +1,7 @@
 function Sandbox( core ) {
   "use strict";
 
-//  Var _core = core;
+  //  Var _core = core;
 
   return {
   };

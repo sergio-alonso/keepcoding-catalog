@@ -12,7 +12,7 @@ var coreMsg = function( core ) {
     if ( !cache[ message ] ) {
       cache[ message ] = [];
     }
-    cache[ message ].push( { callback:callback } );
+    cache[ message ].push( { callback: callback } );
   };
 
   var onNotify = function( message ) {

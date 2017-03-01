@@ -64,8 +64,9 @@ var Core = require( "./framework-core" );
   var onLoad = function( name ) {
     console.log( "base::onLoad() name='" + name + "'" );
     _libraries[ name ].loaded = true;
-    if ( name === "jquery" )
+    if ( name === "jquery" ) {
       load( "bootstrap" );
+    }
     if ( isBaseReady() ) {
       console.log( "base::isBaseReady() yes, so continue" );
       Core.boot();
@@ -73,7 +74,8 @@ var Core = require( "./framework-core" );
   };
 
   var onError = function() {
-    console.error( "base::onError() Something was wrong loading library from CDN. Try to reload the browser." );
+    console.error( "Something was wrong loading library from CDN. Try to reload the browser." );
+
     // TODO: load from local
   };
 
@@ -88,18 +90,18 @@ var Core = require( "./framework-core" );
 
   var load = function( name ) {
     try {
-    var script = document.createElement( "script" ),
-        head = document.getElementsByTagName( "script" )[ 0 ];
+      var script = document.createElement( "script" ),
+          head = document.getElementsByTagName( "script" )[ 0 ];
 
-    script.type = "text/javascript";
-    script.src = _libraries[ name ].src;
-    script.onreadystatechange = function() {
-      if ( this.readyState == "complete" ) {
-        onLoad( name );
-      }
-    };
-    script.onload = function() {onLoad( name );};
-    script.onerror = function() {onError();};
+      script.type = "text/javascript";
+      script.src = _libraries[ name ].src;
+      script.onreadystatechange = function() {
+        if ( this.readyState == "complete" ) {
+          onLoad( name );
+        }
+      };
+      script.onload = function() {onLoad( name );};
+      script.onerror = function() {onError();};
 
       head.parentNode.insertBefore( script, head );
     }
@@ -117,6 +119,7 @@ var Core = require( "./framework-core" );
 
   insertScript( "jquery", "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" );
   insertScript( "bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" );
+
   //LoadAll();
   load( "jquery" );
 

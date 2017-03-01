@@ -21,7 +21,8 @@ var moduleJoin = function( sandbox ) {
 
   var _onJoinEvent = function() {
     sandbox.log.debug( "module::join::_onJoinEvent()" );
-    sandbox.showModal( "#register-view", "modal-register.html", _showModalCallback, _hideModalCallback );
+    sandbox.showModal( "#register-view", "modal-register.html",
+                       _showModalCallback, _hideModalCallback );
   };
 
   return {

@@ -3,6 +3,7 @@ function coreDom( core ) {
 
   var init = function() {
     core.log.debug( "extension::dom::init()" );
+
     // Extend the core
     core.dom = this;
   };
@@ -10,6 +11,7 @@ function coreDom( core ) {
   var find = function( selector ) {
     core.log.debug( "extension::dom::find() selector='" + selector + "'" );
     var found = $( selector );
+
     //Core.log.debug(found);
     return found;
   };
@@ -28,6 +30,7 @@ function coreDom( core ) {
 
   // Extend the sandbox
   core.sandbox.find = function( selector ) {
+
     //Core.log.debug("sandbox::extension::dom::find() selector='" + selector + "'");
     return find( selector );
   };

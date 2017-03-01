@@ -47,6 +47,7 @@ var moduleJoin = function( sandbox ) {
 
   function _showModalCallback() {
     sandbox.log.debug( "module::join::_showModalCallback()" );
+
     _joinButton = sandbox.find( "#join-btn" );
     _joinButton.bind( "click", _joinButtonCallback );
   }

@@ -13,6 +13,10 @@ var moduleJoin = function( sandbox ) {
     ], _onJoinEvent );
   }
 
+  function onDestroy() {
+    sandbox.log.debug( "module::join::destroy()" );
+  }
+
   function _joinButtonCallback() {
     sandbox.log.debug( "module::join::_joinButtonCallback()" );
 
@@ -60,9 +64,7 @@ var moduleJoin = function( sandbox ) {
 
   return {
     init: onInit,
-    destroy: function() {
-      sandbox.log.debug.debug( "module::join::destroy()" );
-    }
+    destroy: onDestroy
   };
 
 };

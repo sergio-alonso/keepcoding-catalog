@@ -3,20 +3,34 @@ function moduleNavbar( sandbox ) {
 
   var _joinButton;
 
-  function _notifyActionCallback() {
-    sandbox.log.debug( "navbar::_notifyActionCallback()" );
+  function onInit() {
+    sandbox.log.debug( "module::navbar::onInit()" );
+
+    _joinButton = sandbox.find( "#register" );
+    _joinButton.bind( "click", _onJoinButtonClick );
+
+    sandbox.subscribe( [
+      "msg-join-submit"
+    ], _onJoinSubmitMessage );
+  }
+
+  function onDestroy() {
+    sandbox.log.debug( "module::navbar::onDestroy()" );
+  }
+
+  function _onJoinButtonClick() {
+    sandbox.log.debug( "module::navbar::_onJoinButtonClick()" );
+
     sandbox.notify( "join" );
   }
 
+  function _onJoinSubmitMessage() {
+    sandbox.log.debug( "module::navbar::_onJoinSubmitMessage()" );
+  }
+
   return {
-    init: function() {
-      sandbox.log.debug( "module::navbar::init()" );
-      _joinButton = sandbox.find( "#register" );
-      _joinButton.bind( "click", _notifyActionCallback );
-    },
-    destroy: function() {
-      sandbox.log.debug( "navbar::destroy()" );
-    }
+    init: onInit,
+    destroy: onDestroy
   };
 
 }

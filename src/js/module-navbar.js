@@ -21,7 +21,7 @@ function moduleNavbar( sandbox ) {
   function _onJoinButtonClick() {
     sandbox.log.debug( "module::navbar::_onJoinButtonClick()" );
 
-    sandbox.notify( "join" );
+    sandbox.notify( "msg-join-request" );
   }
 
   function _onJoinSubmitMessage() {

@@ -54,7 +54,7 @@ var moduleJoin = function( sandbox ) {
     init: function() {
       sandbox.log.debug( "module::join::init()" );
       sandbox.subscribe( [
-        "join"
+        "msg-join-request"
       ], _onJoinEvent );
     },
     destroy: function() {

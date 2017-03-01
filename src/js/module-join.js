@@ -56,11 +56,12 @@ var moduleJoin = function( sandbox ) {
     _joinButton.unbind( "click" );
   }
 
-  var _onJoinEvent = function() {
+  function _onJoinEvent() {
     sandbox.log.debug( "module::join::_onJoinEvent()" );
+
     sandbox.showModal( "#register-view", "modal-register.html",
                        _showModalCallback, _hideModalCallback );
-  };
+  }
 
   return {
     init: onInit,

@@ -17,7 +17,6 @@ var coreMsg = function( core ) {
 
   var onNotify = function( message ) {
     core.log.debug( "extension::msg::onNotify() message='" + message + "'" );
-    core.log.debug( cache[ message ] );
     if ( !cache[ message ] ) {
       cache[ message ] = [];
     }

@@ -28,6 +28,13 @@ function coreDom( core ) {
 
   };
 
+  var hideModal = function( selector ) {
+    var element = find( selector );
+
+    element
+    .modal( "hide" );
+  };
+
   var removeError = function( selector ) {
     var field = find( selector );
 
@@ -51,6 +58,10 @@ function coreDom( core ) {
 
   core.sandbox.showModal = function( selector, remote, showCallback, hideCallback ) {
     showModal( selector, remote, showCallback, hideCallback );
+  };
+
+  core.sandbox.hideModal = function( selector ) {
+    hideModal( selector );
   };
 
   core.sandbox.showError = function( selector, message ) {

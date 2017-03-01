@@ -28,7 +28,8 @@ var moduleJoin = function( sandbox ) {
     }
 
     if ( valid ) {
-      sandbox.notify( "join-submit" );
+      sandbox.hideModal( "#register-view" );
+      sandbox.notify( "msg-join-submit" );
     }
   }
 

@@ -1,5 +1,8 @@
 var Sandbox = require( "./framework-sandbox" );
+var extensionLog = require( "./extension-log" );
 var extensionDom = require( "./extension-dom" );
+var extensionMsg = require( "./extension-msg" );
+var extensionForm = require( "./extension-form" );
 var moduleNavbar = require( "./module-navbar" );
 var moduleJoin = require( "./module-join" );
 
@@ -41,24 +44,40 @@ var Core = ( function() {
   var use = function( extension, creator ) {
     _extensions[ extension ] = {
       creator: creator,
-      instance: null
+      instance: undefined
     };
   };
 
   var load = function( extension ) {
+    if ( typeof _extensions[ extension ].instance !== "undefined" ) {
+      console.log( "core::load() extension='" + extension + "' already loaded" );
+      return;
+    }
+
     _extensions[ extension ].instance = _extensions[ extension ].creator( this );
     _extensions[ extension ].instance.init();
   };
 
+  var loadAll = function() {
+    var extension;
+    for ( extension in _extensions ) {
+      this.load( extension );
+    }
+  };
+
   var boot = function() {
+    this.use( "log", extensionLog );
     this.use( "dom", extensionDom );
+    this.use( "msg", extensionMsg );
+    this.use( "form", extensionForm );
 
     // TODO: add extension dependencies, instead of load in order
     this.load( "log" );
-    this.load( "dom" );
-    this.load( "msg" );
+    this.loadAll();
+
     this.register( "navbar", moduleNavbar );
     this.register( "join", moduleJoin );
+
     this.startAll();
   };
 
@@ -66,6 +85,7 @@ var Core = ( function() {
     sandbox: sandbox,
     use: use,
     load: load,
+    loadAll: loadAll,
     boot: boot,
     register: register,
     start: start,

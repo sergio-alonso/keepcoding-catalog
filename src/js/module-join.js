@@ -1,11 +1,35 @@
 var moduleJoin = function( sandbox ) {
   "use strict";
 
+  var _emailField;
+  var _passwordField;
   var _joinButton;
 
   function _joinButtonCallback() {
     sandbox.log.debug( "module::join::_joinButtonCallback()" );
-    sandbox.notify( "join-submit" );
+
+    _emailField = sandbox.find( "#email" );
+    _passwordField = sandbox.find( "#password" );
+
+    var valid = true;
+
+    if ( false === sandbox.isValid( _emailField.val(), "email-rule" ) ) {
+      sandbox.showError( "#email", "¿Seguro que este es tu correo?" );
+      valid = false;
+    } else {
+      sandbox.removeError( "#email" );
+    }
+
+    if ( false === sandbox.isValid( _passwordField.val(), "password-rule" ) ) {
+      sandbox.showError( "#password", "Poco segura, usa, mayusculas, minusculas y numeros." );
+      valid = false;
+    } else {
+      sandbox.removeError( "#password" );
+    }
+
+    if ( valid ) {
+      sandbox.notify( "join-submit" );
+    }
   }
 
   function _showModalCallback() {

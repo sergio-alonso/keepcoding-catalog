@@ -28,15 +28,37 @@ function coreDom( core ) {
 
   };
 
+  var removeError = function( selector ) {
+    var field = find( selector );
+
+    field.prev( "div.textError" )
+    .remove()
+    .end();
+  };
+
+  var showError = function( selector, message ) {
+    var field = find( selector ),
+        error = "<div class='textError'>" + message + "</div>" ;
+
+    removeError( selector );
+    field.before( error );
+  };
+
   // Extend the sandbox
   core.sandbox.find = function( selector ) {
-
-    //Core.log.debug("sandbox::extension::dom::find() selector='" + selector + "'");
     return find( selector );
   };
 
   core.sandbox.showModal = function( selector, remote, showCallback, hideCallback ) {
     showModal( selector, remote, showCallback, hideCallback );
+  };
+
+  core.sandbox.showError = function( selector, message ) {
+    showError( selector, message );
+  };
+
+  core.sandbox.removeError = function( selector ) {
+    removeError( selector );
   };
 
   return {

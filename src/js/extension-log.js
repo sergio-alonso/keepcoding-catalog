@@ -1,5 +1,11 @@
-var coreLog = function( core ) {
+function extensionLog( core ) {
   "use strict";
+
+  var init = function() {
+    console.log( "extension::log::init()" );
+    core.log = this;
+    core.sandbox.log = this;
+  };
 
   var debug = function( message ) {
     console.log( message );
@@ -9,19 +15,11 @@ var coreLog = function( core ) {
     console.error( message );
   };
 
-  var init = function() {
-    console.log( "extension::log::init()" );
-    core.log = this;
-    core.sandbox.log = this;
-  };
-
   return {
     init: init,
     debug: debug,
     error: error
   };
-};
+}
 
-var Core = require( "./framework-core" );
-Core.use( "log", coreLog );
-
+module.exports = extensionLog;

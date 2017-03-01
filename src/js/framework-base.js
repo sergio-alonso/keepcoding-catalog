@@ -110,12 +110,14 @@ var Core = require( "./framework-core" );
     }
   };
 
+  /*R
   var loadAll = function() {
     var library;
     for ( library in _libraries ) {
       load( library );
     }
   };
+   */
 
   insertScript( "jquery", "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" );
   insertScript( "bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" );

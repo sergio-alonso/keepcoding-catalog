@@ -1,4 +1,4 @@
-var coreMsg = function( core ) {
+function extensionMsg( core ) {
   "use strict";
 
   var cache = {};
@@ -39,7 +39,6 @@ var coreMsg = function( core ) {
     subscribe: onSubscribe,
     notify: onNotify
   };
-};
+}
 
-var Core = require( "./framework-core" );
-Core.use( "msg", coreMsg );
+module.exports = extensionMsg;

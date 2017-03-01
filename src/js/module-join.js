@@ -53,6 +53,7 @@ var moduleJoin = function( sandbox ) {
 
   function _hideModalCallback() {
     sandbox.log.debug( "module::join::_hideModalCallback()" );
+
     _joinButton.unbind( "click" );
   }
 

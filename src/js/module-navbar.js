@@ -26,6 +26,8 @@ function moduleNavbar( sandbox ) {
 
   function _onJoinSubmitMessage() {
     sandbox.log.debug( "module::navbar::_onJoinSubmitMessage()" );
+
+    _joinButton.remove();
   }
 
   return {

@@ -5,6 +5,14 @@ var moduleJoin = function( sandbox ) {
   var _passwordField;
   var _joinButton;
 
+  function onInit() {
+    sandbox.log.debug( "module::join::onInit()" );
+
+    sandbox.subscribe( [
+      "msg-join-request"
+    ], _onJoinEvent );
+  }
+
   function _joinButtonCallback() {
     sandbox.log.debug( "module::join::_joinButtonCallback()" );
 
@@ -51,12 +59,7 @@ var moduleJoin = function( sandbox ) {
   };
 
   return {
-    init: function() {
-      sandbox.log.debug( "module::join::init()" );
-      sandbox.subscribe( [
-        "msg-join-request"
-      ], _onJoinEvent );
-    },
+    init: onInit,
     destroy: function() {
       sandbox.log.debug.debug( "module::join::destroy()" );
     }

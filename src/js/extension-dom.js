@@ -9,10 +9,8 @@ function coreDom( core ) {
   };
 
   var find = function( selector ) {
-    core.log.debug( "extension::dom::find() selector='" + selector + "'" );
     var found = $( selector );
 
-    //Core.log.debug(found);
     return found;
   };
 

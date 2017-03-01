@@ -34,7 +34,7 @@
     "js:hint": "jshint $npm_package_config_source/js/*.js",
     "js:browserify": "browserify $npm_package_config_source/js/*.js --outfile $npm_package_config_dest/script.js",
     "js:uglify": "uglifyjs $npm_package_config_dest/script.js --compress --mangle --source-map $npm_package_config_dest/script.js.map --source-map-root script.js --source-map-url script.js.map --prefix 1 --source-map-include-sources --output $npm_package_config_dest/script.min.js",
-    "build:css": "node-sass $npm_package_config_source/index.scss -o $npm_package_config_dest && node-sass $npm_package_config_source/style.scss -o $npm_package_config_dest",
+    "build:css": "node-sass $npm_package_config_source/style.scss -o $npm_package_config_dest",
     "build:html": "pug --no-debug $npm_package_config_source/*.pug --out $npm_package_config_dest",
     "build": "npm run build:html & npm run build:css & npm run build:js & npm run build:ico",
     "watch:ico": "nodemon -e ico -x 'npm run build:ico'",

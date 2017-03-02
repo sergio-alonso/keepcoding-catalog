@@ -25,14 +25,25 @@ function extensionStorage( core ) {
     localStorage.setItem( object, JSON.stringify( data ) );
   };
 
+  var session = function( object, data ) {
+    core.log.debug( _log + "session()", data );
+
+    sessionStorage.setItem( object, JSON.stringify( data ) );
+  };
+
   core.sandbox.store = function( object, data ) {
     store( object, data );
+  };
+
+  core.sandbox.session = function( object, data ) {
+    session( object, data );
   };
 
   return {
     init: onInit,
     destroy: onDestroy,
-    store: store
+    store: store,
+    session: session
   };
 
 }

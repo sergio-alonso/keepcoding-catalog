@@ -47,6 +47,11 @@ function extensionStorage( core ) {
     return localStorage.hasOwnProperty( "user" );
   };
 
+  // Return true if user has been loged
+  core.sandbox.isUserLoged = function() {
+    return sessionStorage.hasOwnProperty( "user" );
+  }
+
   return {
     init: onInit,
     destroy: onDestroy,

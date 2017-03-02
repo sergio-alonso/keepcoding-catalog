@@ -11,6 +11,10 @@ function extensionLog( core ) {
     console.log( message );
   };
 
+  var warn = function( message ) {
+    console.warn( message );
+  };
+
   var error = function( message ) {
     console.error( message );
   };
@@ -18,6 +22,7 @@ function extensionLog( core ) {
   return {
     init: init,
     debug: debug,
+    warn: warn,
     error: error
   };
 }

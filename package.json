@@ -1,14 +1,14 @@
 {
-  "name": "@sergioalonso.es/keepcoding-catalog",
+  "name": "@sergioalonso.es/keepcoding-prototype",
   "version": "0.1.0",
   "description": "Keepcoding Catalog",
   "keywords": [
     "keepcoding",
     "frontend"
   ],
-  "homepage": "https://github.com/sergio-alonso/keepcoding-catalog#readme",
+  "homepage": "https://github.com/sergio-alonso/keepcoding-prototype#readme",
   "bugs": {
-    "url": "https://github.com/sergio-alonso/keepcoding-catalog/issues",
+    "url": "https://github.com/sergio-alonso/keepcoding-prototype/issues",
     "email": "sergio@sergioalonso.es"
   },
   "license": "GPL-3.0",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sergio-alonso/keepcoding-catalog.git"
+    "url": "https://github.com/sergio-alonso/keepcoding-prototype.git"
   },
   "main": "index.js",
   "config": {

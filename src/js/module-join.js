@@ -1,12 +1,13 @@
 var moduleJoin = function( sandbox ) {
   "use strict";
 
-  var _emailField;
-  var _passwordField;
-  var _joinButton;
+  var _log = "module::join::",
+      _emailField,
+      _passwordField,
+      _joinButton;
 
   function onInit() {
-    sandbox.log.debug( "module::join::onInit()" );
+    sandbox.log.debug( _log + "onInit()" );
 
     sandbox.subscribe( [
       "msg-join-request"
@@ -14,11 +15,11 @@ var moduleJoin = function( sandbox ) {
   }
 
   function onDestroy() {
-    sandbox.log.debug( "module::join::destroy()" );
+    sandbox.log.debug( _log + "destroy()" );
   }
 
   function _joinButtonCallback() {
-    sandbox.log.debug( "module::join::_joinButtonCallback()" );
+    sandbox.log.debug( _log + "_joinButtonCallback()" );
 
     _emailField = sandbox.find( "#email" );
     _passwordField = sandbox.find( "#password" );
@@ -49,20 +50,20 @@ var moduleJoin = function( sandbox ) {
   }
 
   function _showModalCallback() {
-    sandbox.log.debug( "module::join::_showModalCallback()" );
+    sandbox.log.debug( _log + "_showModalCallback()" );
 
     _joinButton = sandbox.find( "#join-btn" );
     _joinButton.bind( "click", _joinButtonCallback );
   }
 
   function _hideModalCallback() {
-    sandbox.log.debug( "module::join::_hideModalCallback()" );
+    sandbox.log.debug( _log + "_hideModalCallback()" );
 
     _joinButton.unbind( "click" );
   }
 
   function _onJoinEvent() {
-    sandbox.log.debug( "module::join::_onJoinEvent()" );
+    sandbox.log.debug( _log + "_onJoinEvent()" );
 
     sandbox.showModal( "#register-view", "modal-register.html",
                        _showModalCallback, _hideModalCallback );

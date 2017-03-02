@@ -33,6 +33,8 @@ function moduleNavbar( sandbox ) {
   function _onJoinSubmitMessage( data ) {
     sandbox.log.debug( "module::navbar::_onJoinSubmitMessage()", data );
 
+    sandbox.store( "user", data );
+
     _joinButton.remove();
     sandbox.notify( "msg-login-submit", data );
   }
@@ -44,7 +46,7 @@ function moduleNavbar( sandbox ) {
   function _onLoginSubmitMessage( data ) {
     sandbox.log.debug( "module::navbar::_onLoginSubmitMessage()", data );
 
-    sandbox.store( "user", data );
+    sandbox.session( "user", data );
 
     _loginButtonIcon.toggleClass( "glyphicon-log-out" );
   }

@@ -6,6 +6,12 @@ function extensionStorage( core ) {
   var onInit = function() {
     core.log.debug( _log + "onInit()" );
 
+    if ( typeof Storage === 'undefined' ) {
+
+      // TODO: Handle this error
+      core.log.error( _log + "onInit() No HTML5 Storage Support");
+    }
+
     core.storage = this;
   };
 
@@ -15,6 +21,7 @@ function extensionStorage( core ) {
 
   var store = function( object, data ) {
     core.log.debug( _log + "store()", data );
+
     localStorage.setItem( object, JSON.stringify( data ) );
   };
 

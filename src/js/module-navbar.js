@@ -30,6 +30,10 @@ function moduleNavbar( sandbox ) {
     sandbox.notify( "msg-join-request" );
   }
 
+  function _onLoginButtonClick() {
+    sandbox.log.debug( "module::navbar::_onLoginButtonClick()" );
+  }
+
   function _onJoinSubmitMessage( data ) {
     sandbox.log.debug( "module::navbar::_onJoinSubmitMessage()", data );
 
@@ -37,10 +41,6 @@ function moduleNavbar( sandbox ) {
 
     _joinButton.remove();
     sandbox.notify( "msg-login-submit", data );
-  }
-
-  function _onLoginButtonClick() {
-    sandbox.log.debug( "module::navbar::_onLoginButtonClick()" );
   }
 
   function _onLoginSubmitMessage( data ) {

@@ -12,7 +12,7 @@ function moduleNavbar( sandbox ) {
     _joinButton.bind( "click", _onJoinButtonClick );
 
     _loginButton = sandbox.find( "#login" );
-    _loginButton.bind( "click", _onLoginButton );
+    _loginButton.bind( "click", _onLoginButtonClick );
 
     _loginButtonIcon = sandbox.find( "#login > span.glyphicon" );
 

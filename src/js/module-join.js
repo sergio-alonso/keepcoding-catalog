@@ -43,7 +43,7 @@ var moduleJoin = function( sandbox ) {
     if ( valid ) {
       sandbox.hideModal( "#register-view" );
 
-      // TODO: encrypt password before store
+      sandbox.log.warn( _log + "_joinButtonCallback() password must be encrypted before store" );
       sandbox.notify( "msg-join-submit",
                       { email:_emailField.val(), password:_passwordField.val() } );
     }

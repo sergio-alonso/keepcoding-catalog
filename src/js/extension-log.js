@@ -1,10 +1,17 @@
 function extensionLog( core ) {
   "use strict";
 
-  var init = function() {
-    console.log( "extension::log::init()" );
+  var _log = "extension::log::";
+
+  var onInit = function() {
+    console.log( _log + "onInit()" );
+
     core.log = this;
     core.sandbox.log = this;
+  };
+
+  var onDestroy = function() {
+    console.log( _log + "onDestroy()" );
   };
 
   var debug = function( message ) {
@@ -20,7 +27,8 @@ function extensionLog( core ) {
   };
 
   return {
-    init: init,
+    init: onInit,
+    destroy: onDestroy,
     debug: debug,
     warn: warn,
     error: error

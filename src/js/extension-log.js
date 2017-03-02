@@ -14,7 +14,11 @@ function extensionLog( core ) {
     console.log( _log + "onDestroy()" );
   };
 
-  var debug = function( message ) {
+  var debug = function( message, data ) {
+    if ( typeof data !== "undefined" ) {
+      console.log( message, data );
+      return;
+    }
     console.log( message );
   };
 

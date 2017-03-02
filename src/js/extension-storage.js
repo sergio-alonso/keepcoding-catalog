@@ -39,6 +39,14 @@ function extensionStorage( core ) {
     session( object, data );
   };
 
+  // I'm using the Web Storage Api to mock user handler, but
+  // TODO: move to another place
+
+  // Return true if user has been joined
+  core.sandbox.isUserJoined = function() {
+    return localStorage.hasOwnProperty( "user" );
+  };
+
   return {
     init: onInit,
     destroy: onDestroy,

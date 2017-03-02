@@ -15,14 +15,14 @@ function extensionMsg( core ) {
     cache[ message ].push( { callback: callback } );
   };
 
-  var onNotify = function( message ) {
-    core.log.debug( "extension::msg::onNotify() message='" + message + "'" );
+  var onNotify = function( message, data ) {
+    core.log.debug( "extension::msg::onNotify() message='" + message + "'", data );
     if ( !cache[ message ] ) {
       cache[ message ] = [];
     }
     var i;
     for ( i = 0; i < cache[ message ].length; i++ ) {
-      cache[ message ][ i ].callback.apply();
+      cache[ message ][ i ].callback( data );
     }
   };
 
@@ -30,8 +30,8 @@ function extensionMsg( core ) {
     onSubscribe( message, callback );
   };
 
-  core.sandbox.notify = function( message ) {
-    onNotify( message );
+  core.sandbox.notify = function( message, data ) {
+    onNotify( message, data );
   };
 
   return {

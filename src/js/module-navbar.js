@@ -2,6 +2,7 @@ function moduleNavbar( sandbox ) {
   "use strict";
 
   var _joinButton,
+      _loginButton,
       _loginButtonIcon;
 
   function onInit() {
@@ -9,6 +10,9 @@ function moduleNavbar( sandbox ) {
 
     _joinButton = sandbox.find( "#register" );
     _joinButton.bind( "click", _onJoinButtonClick );
+
+    _loginButton = sandbox.find( "#login" );
+    _loginButton.bind( "click", _onLoginButton );
 
     _loginButtonIcon = sandbox.find( "#login > span.glyphicon" );
 
@@ -31,6 +35,10 @@ function moduleNavbar( sandbox ) {
 
     _joinButton.remove();
     sandbox.notify( "msg-login-submit", data );
+  }
+
+  function _onLoginButtonClick() {
+    sandbox.log.debug( "module::navbar::_onLoginButtonClick()" );
   }
 
   function _onLoginSubmitMessage( data ) {

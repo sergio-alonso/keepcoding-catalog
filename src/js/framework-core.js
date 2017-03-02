@@ -5,6 +5,7 @@ var extensionMsg = require( "./extension-msg" );
 var extensionForm = require( "./extension-form" );
 var moduleNavbar = require( "./module-navbar" );
 var moduleJoin = require( "./module-join" );
+var moduleCTA = require( "./module-call-to-action" );
 
 var Core = ( function() {
   "use strict";
@@ -77,6 +78,7 @@ var Core = ( function() {
 
     this.register( "navbar", moduleNavbar );
     this.register( "join", moduleJoin );
+    this.register( "cta", moduleCTA );
 
     this.startAll();
   };

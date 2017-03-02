@@ -1,4 +1,4 @@
-function coreDom( core ) {
+function extensionDom( core ) {
   "use strict";
 
   var init = function() {
@@ -76,4 +76,4 @@ function coreDom( core ) {
   };
 }
 
-module.exports = coreDom;
+module.exports = extensionDom;

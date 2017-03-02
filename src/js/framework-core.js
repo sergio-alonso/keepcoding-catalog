@@ -1,11 +1,14 @@
 var Sandbox = require( "./framework-sandbox" );
+
 var extensionLog = require( "./extension-log" );
 var extensionDom = require( "./extension-dom" );
 var extensionMsg = require( "./extension-msg" );
 var extensionForm = require( "./extension-form" );
+var extensionStorage = require( "./extension-storage" );
+
 var moduleNavbar = require( "./module-navbar" );
-var moduleJoin = require( "./module-join" );
 var moduleCTA = require( "./module-call-to-action" );
+var moduleJoin = require( "./module-join" );
 
 var Core = ( function() {
   "use strict";
@@ -71,6 +74,7 @@ var Core = ( function() {
     this.use( "dom", extensionDom );
     this.use( "msg", extensionMsg );
     this.use( "form", extensionForm );
+    this.use( "storage", extensionStorage );
 
     // TODO: add extension dependencies, instead of load in order
     this.load( "log" );

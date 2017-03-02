@@ -6,10 +6,10 @@ function extensionStorage( core ) {
   var onInit = function() {
     core.log.debug( _log + "onInit()" );
 
-    if ( typeof Storage === 'undefined' ) {
+    if ( typeof Storage === "undefined" ) {
 
       // TODO: Handle this error
-      core.log.error( _log + "onInit() No HTML5 Storage Support");
+      core.log.error( _log + "onInit() No HTML5 Storage Support" );
     }
 
     core.storage = this;

@@ -31,8 +31,8 @@ function moduleCTA( sandbox ) {
       return;
     }
 
-    sandbox.log.warn( "module::cta One time password email must be sent to "
-                    + "<" + _emailField.val() + ">" );
+    sandbox.log.warn( "module::cta One time password email must be sent to " +
+                      "<" + _emailField.val() + ">" );
     sandbox.notify( "msg-join-submit" );
   }
 

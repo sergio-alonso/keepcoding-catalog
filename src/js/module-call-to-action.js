@@ -33,7 +33,7 @@ function moduleCTA( sandbox ) {
 
     sandbox.log.warn( "module::cta One time password email must be sent to " +
                       "<" + _emailField.val() + ">" );
-    sandbox.notify( "msg-join-submit" );
+    sandbox.notify( "msg-join-submit", { email: _emailField.val() } );
   }
 
   function _onAnonymousButtonClick() {

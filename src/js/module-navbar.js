@@ -26,15 +26,17 @@ function moduleNavbar( sandbox ) {
     sandbox.notify( "msg-join-request" );
   }
 
-  function _onJoinSubmitMessage() {
-    sandbox.log.debug( "module::navbar::_onJoinSubmitMessage()" );
+  function _onJoinSubmitMessage( data ) {
+    sandbox.log.debug( "module::navbar::_onJoinSubmitMessage()", data );
 
     _joinButton.remove();
-    sandbox.notify( "msg-login-submit" );
+    sandbox.notify( "msg-login-submit", data );
   }
 
-  function _onLoginSubmitMessage() {
-    sandbox.log.debug( "module::navbar::_onLoginSubmitMessage()" );
+  function _onLoginSubmitMessage( data ) {
+    sandbox.log.debug( "module::navbar::_onLoginSubmitMessage()", data );
+
+    sandbox.store( "user", data );
 
     _loginButtonIcon.toggleClass( "glyphicon-log-out" );
   }

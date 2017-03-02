@@ -41,7 +41,10 @@ var moduleJoin = function( sandbox ) {
 
     if ( valid ) {
       sandbox.hideModal( "#register-view" );
-      sandbox.notify( "msg-join-submit" );
+
+      // TODO: encrypt password before store
+      sandbox.notify( "msg-join-submit",
+                      { email:_emailField.val(), password:_passwordField.val() } );
     }
   }
 

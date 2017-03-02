@@ -30,7 +30,7 @@
     "start": "npm run build && npm run server & npm run watch",
     "build:ico": "cp $npm_package_config_source/ico/*.ico $npm_package_config_dest/",
     "build:js": "npm run js:jscs && npm run js:hint && npm run js:browserify && npm run js:uglify",
-    "js:jscs": "jscs --preset=jquery $npm_package_config_source/js/*.js",
+    "js:jscs": "jscs $npm_package_config_source/js/*.js",
     "js:hint": "jshint $npm_package_config_source/js/*.js",
     "js:browserify": "browserify $npm_package_config_source/js/*.js --outfile $npm_package_config_dest/script.js",
     "js:uglify": "uglifyjs $npm_package_config_dest/script.js --compress --mangle --source-map $npm_package_config_dest/script.js.map --source-map-root script.js --source-map-url script.js.map --prefix 1 --source-map-include-sources --output $npm_package_config_dest/script.min.js",

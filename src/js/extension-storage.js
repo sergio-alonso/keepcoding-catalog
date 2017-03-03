@@ -53,11 +53,11 @@ function extensionStorage( core ) {
   };
 
   core.sandbox.removeUserAccount = function() {
-    localStorage.remove( "user" );
+    localStorage.removeItem( "user" );
   };
 
   core.sandbox.removeUserSession = function() {
-    sessionStorage.remove( "user" );
+    sessionStorage.removeItem( "user" );
   };
 
   return {

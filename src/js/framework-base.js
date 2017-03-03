@@ -121,9 +121,15 @@ var Core = require( "./framework-core" );
 
   insertScript( "jquery", "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" );
   insertScript( "bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" );
+  insertScript( "masonry", "//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" );
+  insertScript( "imagesloaded", "//npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js" );
 
   //LoadAll();
   load( "jquery" );
+
+  // After load(jquery) load(bootstrap);
+  load( "masonry" );
+  load( "imagesloaded" );
 
   // TODO: handle dependencies between libraries
 

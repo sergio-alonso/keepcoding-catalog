@@ -50,11 +50,15 @@ function extensionStorage( core ) {
   // Return true if user has been loged
   core.sandbox.isUserLoged = function() {
     return sessionStorage.hasOwnProperty( "user" );
-  }
+  };
 
   core.sandbox.removeUserAccount = function() {
-    return localStorage.remove( "user" );
-  }
+    localStorage.remove( "user" );
+  };
+
+  core.sandbox.removeUserSession = function() {
+    sessionStorage.remove( "user" );
+  };
 
   return {
     init: onInit,

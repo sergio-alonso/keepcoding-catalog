@@ -52,6 +52,10 @@ function extensionStorage( core ) {
     return sessionStorage.hasOwnProperty( "user" );
   }
 
+  core.sandbox.removeUserAccount = function() {
+    return localStorage.remove( "user" );
+  }
+
   return {
     init: onInit,
     destroy: onDestroy,

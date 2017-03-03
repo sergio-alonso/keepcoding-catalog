@@ -10,6 +10,7 @@ var moduleNavbar = require( "./module-navbar" );
 var moduleCTA = require( "./module-call-to-action" );
 var moduleJoin = require( "./module-join" );
 var moduleLogin = require( "./module-login" );
+var moduleSearchResult = require( "./module-search-result" );
 
 var Core = ( function() {
   "use strict";
@@ -85,6 +86,7 @@ var Core = ( function() {
     this.register( "cta", moduleCTA );
     this.register( "join", moduleJoin );
     this.register( "login", moduleLogin );
+    this.register( "search-result", moduleSearchResult );
 
     this.startAll();
   };

@@ -49,6 +49,7 @@ function moduleNavbar( sandbox ) {
       _logout();
     } else if ( sandbox.isUserJoined() ) {
       sandbox.notify( "msg-login-request" );
+      sandbox.log.warn( _log + "not implemented yet" );
     } else {
       sandbox.notify( "msg-join-request" );
     }

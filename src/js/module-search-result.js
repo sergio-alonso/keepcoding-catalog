@@ -24,6 +24,10 @@ function moduleSearchResult( sandbox ) {
       "msg-like-article"
     ], onLikeEvent );
 
+    sandbox.subscribe( [
+      "msg-show-article"
+    ], onShowArticle );
+
     // Update all dates initially
     sandbox.find( ".relative-date" ).each( updateRelativeDate );
 
@@ -57,6 +61,12 @@ function moduleSearchResult( sandbox ) {
     _container.masonry( "remove", sandbox.find( "#" + data.id ) ).masonry( "layout" );
 
     load( "resource.html" );
+  };
+
+  var onShowArticle = function() {
+    sandbox.log.debug( _log + "onShowArticle()" );
+
+    sandbox.showModal( "#detail-view", "page-resource-detail.html" );
   };
 
   var load = function( url ) {

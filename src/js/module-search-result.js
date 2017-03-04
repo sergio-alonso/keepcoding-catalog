@@ -28,7 +28,7 @@ function moduleSearchResult( sandbox ) {
     sandbox.find( ".relative-date" ).each( updateRelativeDate );
 
     // Register the timer to call it again every minute
-    setInterval( updateRelativeDates, 60000 );
+    setInterval( updateRelativeDate, 60000 );
   };
 
   var onDestroy = function() {

@@ -24,6 +24,11 @@ function moduleSearchResult( sandbox ) {
       "msg-like-article"
     ], onLikeEvent );
 
+    // Update all dates initially
+    sandbox.find( ".relative-date" ).each( updateRelativeDate );
+
+    // Register the timer to call it again every minute
+    setInterval( updateRelativeDates, 60000 );
   };
 
   var onDestroy = function() {
@@ -35,6 +40,9 @@ function moduleSearchResult( sandbox ) {
     sandbox.log.debug( _log + "_handleSuccess()", data );
 
     _container.masonry().append( data ).masonry( "appended", data );
+
+    // Update all dates when some new article is loaded
+    sandbox.find( ".relative-date" ).each( updateRelativeDate );
   };
 
   var _onScroll = function() {
@@ -60,6 +68,15 @@ function moduleSearchResult( sandbox ) {
         sandbox.log.error( _log + " request failure" );
       }
     } );
+  };
+
+  var updateRelativeDate = function( i, e ) {
+    sandbox.log.debug( _log + "updateRelativeDate()", e );
+
+    var element = sandbox.find( e ),
+        value = sandbox.getRelativeDate( element.attr( "datetime" ) );
+
+    element.html( "<span>" + value + "</span>" );
   };
 
   return {

@@ -15,10 +15,18 @@ function moduleSearchResult( sandbox ) {
         itemSelector: ".item"
       } );
     } );
+
+    sandbox.infiniteScroll( function() {
+      _onScroll();
+    } );
   };
 
   var onDestroy = function() {
     sandbox.log.debug( _log + "onDebug()" );
+  };
+
+  var _onScroll = function() {
+    sandbox.log.warn( _log + "onScroll() Call AJAX!" );
   };
 
   return {

@@ -16,6 +16,7 @@ var moduleJoin = require( "./module-join" );
 var moduleLogin = require( "./module-login" );
 var moduleSearchResult = require( "./module-search-result" );
 var moduleArticle = require( "./module-article" );
+var moduleResource = require( "./module-resource" );
 
 var Core = ( function() {
   "use strict";
@@ -97,6 +98,7 @@ var Core = ( function() {
     this.register( "login", moduleLogin );
     this.register( "search-result", moduleSearchResult );
     this.register( "article", moduleArticle );
+    this.register( "resource", moduleResource );
 
     this.startAll();
   };

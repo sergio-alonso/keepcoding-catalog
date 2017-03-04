@@ -43,7 +43,7 @@ function moduleSearchResult( sandbox ) {
     var data = $( html );
     sandbox.log.debug( _log + "_handleSuccess()", data );
 
-    _container.masonry().append( data ).masonry( "appended", data );
+    _container.masonry().append( data ).masonry( "appended", data ).masonry( "layout" );
 
     // Update all dates when some new article is loaded
     sandbox.find( ".relative-date" ).each( updateRelativeDate );

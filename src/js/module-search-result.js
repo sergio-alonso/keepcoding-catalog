@@ -19,6 +19,11 @@ function moduleSearchResult( sandbox ) {
     sandbox.infiniteScroll( function() {
       _onScroll();
     } );
+
+    sandbox.subscribe( [
+      "msg-like-article"
+    ], onLikeEvent );
+
   };
 
   var onDestroy = function() {
@@ -35,12 +40,24 @@ function moduleSearchResult( sandbox ) {
   var _onScroll = function() {
     sandbox.log.debug( _log + "onScroll()" );
 
-    sandbox.request( "resources.html", {
+    load( "resources.html" );
+  };
+
+  var onLikeEvent = function( data ) {
+    sandbox.log.debug( _log + "onLikeEvent()", data );
+
+    _container.masonry( "remove", sandbox.find( "#" + data.id ) ).masonry( "layout" );
+
+    load( "resource.html" );
+  };
+
+  var load = function( url ) {
+    sandbox.request( url, {
       success: function( response ) {
         _handleSuccess( response );
       },
       failure: function( response ) {
-        sandbox.log.error( _log + "_onScroll() request failure" );
+        sandbox.log.error( _log + " request failure" );
       }
     } );
   };

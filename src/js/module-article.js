@@ -16,9 +16,11 @@ function moduleArticle( sandbox ) {
   };
 
   var onClick = function( event ) {
-    var self = sandbox.find( this );
-    sandbox.log.debug( _log + "onClick() ", self.attr( "resource-id" ) );
+    sandbox.log.warn( _log + "onClick() check if user is loged in" );
+    var self = sandbox.find( this ).attr( "resource-id" );
     event.stopPropagation();
+    sandbox.like( self );
+    sandbox.notify( "msg-like-article", { id: self } );
   };
 
   return {

@@ -25,8 +25,24 @@ function moduleSearchResult( sandbox ) {
     sandbox.log.debug( _log + "onDebug()" );
   };
 
+  var _handleSuccess = function( html ) {
+    var data = $( html );
+    sandbox.log.debug( _log + "_handleSuccess()", data );
+
+    _container.masonry().append( data ).masonry( "appended", data );
+  };
+
   var _onScroll = function() {
-    sandbox.log.warn( _log + "onScroll() Call AJAX!" );
+    sandbox.log.debug( _log + "onScroll()" );
+
+    sandbox.request( "resources.html", {
+      success: function( response ) {
+        _handleSuccess( response );
+      },
+      failure: function( response ) {
+        sandbox.log.error( _log + "_onScroll() request failure" );
+      }
+    } );
   };
 
   return {

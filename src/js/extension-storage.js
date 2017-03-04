@@ -60,6 +60,12 @@ function extensionStorage( core ) {
     sessionStorage.removeItem( "user" );
   };
 
+  core.sandbox.like = function( id ) {
+    var count = localStorage.getItem( id );
+    count++;
+    localStorage.setItem( id, count );
+  };
+
   return {
     init: onInit,
     destroy: onDestroy,

@@ -71,8 +71,6 @@ function moduleSearchResult( sandbox ) {
   };
 
   var updateRelativeDate = function( i, e ) {
-    sandbox.log.debug( _log + "updateRelativeDate()", e );
-
     var element = sandbox.find( e ),
         value = sandbox.getRelativeDate( element.attr( "datetime" ) );
 

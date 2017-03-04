@@ -123,6 +123,7 @@ var Core = require( "./framework-core" );
   insertScript( "bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" );
   insertScript( "masonry", "//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" );
   insertScript( "imagesloaded", "//npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js" );
+  insertScript( "momentjs", "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" );
 
   //LoadAll();
   load( "jquery" );

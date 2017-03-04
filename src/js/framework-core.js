@@ -7,6 +7,7 @@ var extensionForm = require( "./extension-form" );
 var extensionStorage = require( "./extension-storage" );
 var extensionScrollInfinite = require( "./extension-scroll-infinite" );
 var extensionAjax = require( "./extension-ajax" );
+var extensionScrollToTop = require( "./extension-scroll-to-top" );
 
 var moduleNavbar = require( "./module-navbar" );
 var moduleCTA = require( "./module-call-to-action" );
@@ -81,6 +82,7 @@ var Core = ( function() {
     this.use( "storage", extensionStorage );
     this.use( "scroll", extensionScrollInfinite );
     this.use( "ajax", extensionAjax );
+    this.use( "scroll-to-top", extensionScrollToTop );
 
     // TODO: add extension dependencies, instead of load in order
     this.load( "log" );

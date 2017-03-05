@@ -6,9 +6,7 @@ function moduleResource( sandbox ) {
   var onInit = function() {
     sandbox.log.debug( _log + "onInit()" );
 
-    sandbox.subscribe( [
-      "msg-showed-article"
-    ], onShowArticle );
+    sandbox.subscribe( "msg-showed-article", onShowArticle );
   };
 
   var onDestroy = function() {
@@ -16,6 +14,8 @@ function moduleResource( sandbox ) {
   };
 
   var onShowArticle = function() {
+    sandbox.log.debug( _log + "onShowArticle()" );
+
     sandbox.find( "#comment" ).textareaCounter( { limit: 120 } );
   };
 

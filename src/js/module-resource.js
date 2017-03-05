@@ -19,7 +19,7 @@ function moduleResource( sandbox ) {
 
 //F    sandbox.textareaCounter( sandbox.find( "#comment" ), { limit: 120 } );
 
-    sandbox.find( "#comment" ).textareaCounter( { limit: 5 } );
+    sandbox.find( "#comment" ).textareaCounter( { limit: 120 } );
   };
 
   return {

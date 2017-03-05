@@ -1,58 +1,49 @@
+
+// Disable main scroll when modal is opened
 body.modal-open {
     overflow: hidden;
     position: fixed;
     width: 100%;
 }
-  
+
 .modal-detail {
+}
+
+.pd-2 {
     padding: 2em;
-    display: flex;
-    flex-direction: column;
-    @media(min-width:768px){
-	flex-direction: row;
-	height: 90vh;
-    }
 }
 
-.centered {
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.detail-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    align-content: stretch;
-}
-
-.detail-content > header > img {
-    width: 100%;
-}
-
-.detail-content > header > h1 {
+.modal-header {
     text-transform: uppercase;
 }
 
 .detail-comments {
-    overflow: auto;
     border-top: 1px solid #ccc;
-    margin: 1em 0 0 0;
-    padding: 1em 0 0 0;
     @media(min-width:768px){
 	border-left: 1px solid #ccc;
 	border-top: 0px solid #ccc;
-	margin: 0 0 0 1em;
-	padding: 0 0 0 1em;
     }
 }
 
-.detail-comments > textarea {
+textarea#comment {
     width: 100%;
 }
 
-.detail-comments .comment {
+.mb-2 {
+    margin-bottom: 2em;
+}
+
+#detail-comments {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#detail-comments > .items > .item {
     margin: 0.5em;
     padding: 0.5em;
+
+    width: 100%;
+
+    word-wrap: break-word;
 }

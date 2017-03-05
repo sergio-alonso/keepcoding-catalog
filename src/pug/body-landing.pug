@@ -8,8 +8,8 @@ main
       .col-md-1
       .col-md-4.mt-3
         form
-          input(type="email", placeholder="nombre@ejemplo.com")
-          a.btn.btn-default.mt-3(href="page-resource-create.html") Quiero crear mis propios recursos
+          input#email-cta(type="email", placeholder="nombre@ejemplo.com")
+          button#join-cta.btn.btn-default.mt-3(type="button") Quiero crear mis propios recursos
 
   .reinforcement-statement.mt-3
     .row.pr-3.pl-3
@@ -53,4 +53,4 @@ main
   .mt-3.mb-3.text-center.pr-3.pl-3
     form
       p ¡Prueba la plataforma sin registrarte! Recuerda que si quieres almacenar tu trabajo sí tendrás que hacerlo.
-      a.btn.btn-default.mt-3(href="page-resource-create.html") Probar sin registrarme
+      button#join-anonymous.btn.btn-default.mt-3(type="button") Probar sin registrarme

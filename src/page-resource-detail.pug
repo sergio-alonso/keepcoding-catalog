@@ -1,46 +1,53 @@
-div.detail-content
-  header.caption
+main.detail-content.row.pd-2
+  .modal-header.col-xs-12
+    button.close(type="button" data-dismiss="modal" aria-label="Close")
+      span(aria-hidden="true") &times;
     h1 Lorem ipsum dolor sit amet
 
-  img.img-responsive(src="http://placehold.it/210x148")
-
-  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quippe: habes enim a rhetoribus; Tubulo putas dicere? Quare conare, quaeso.
-    i Duo Reges: constructio interrete.
-    Collige omnia, quae soletis: Praesidium amicorum.
-
-  p
-    a(href='http://loripsum.net/', target='_blank') Polycratem Samium felicem appellabant.
-    Nihil enim hoc differt. Itaque contra est, ac dicitis;
-
-  p Non est igitur voluptas bonum. Est, ut dicis, inquit; Praeclarae mortes sunt imperatoriae; Ecce aliud simile dissimile.
-    b De illis, cum volemus.
-
-
-  footer.caption
-    .author-info
-      .author-photo
-        img.img-responsive.img-rounded(src="http://placehold.it/60x60")
-      .author-icons
-        .author-icon
-          span User Name
-          span.glyphicon.glyphicon-user
-        .calendar-icon.text-left
-          time(pubdate="pubdate", datetime="2009-10-10T19:15-08:00") ~1 hour ago
-          span.glyphicon.glyphicon-calendar
-    .action-icons
-      .pin-icon
-        span.glyphicon.glyphicon-pushpin
-        span.badge= Math.round(Math.random()*100)
-      .comments-icon
-        span.glyphicon.glyphicon-comment
-        span.badge= Math.round(Math.random()*100)
-
-aside.detail-comments
-
-  form#comment-form
-    textarea(name='comment',id='comment', placeholder='Comentario')
-    input(type='hidden', name='resource-id' id='resource-id' value='0')
-    input(type='hidden', name='user-id' id='user-id' value='user@example.com')
-    input.btn.btn-default(type='submit', value='Comentar')
-
-  div#detail-comments
+  .modal-body.col-xs-12.col-md-8
+    picture
+      source.img-center(srcset="//placehold.it/600x422" media="(min-width: 767px)")
+      source.img-center(srcset="//placehold.it/420x296" media="(min-width: 480px)")
+      source.img-center(srcset="//placehold.it/210x148")
+      img.img-center(src="//placehold.it/210x148")
+  
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quippe: habes enim a rhetoribus; Tubulo putas dicere? Quare conare, quaeso.
+      i Duo Reges: constructio interrete.
+      Collige omnia, quae soletis: Praesidium amicorum.
+  
+    p
+      a(href='http://loripsum.net/', target='_blank') Polycratem Samium felicem appellabant.
+      Nihil enim hoc differt. Itaque contra est, ac dicitis;
+  
+    p Non est igitur voluptas bonum. Est, ut dicis, inquit; Praeclarae mortes sunt imperatoriae; Ecce aliud simile dissimile.
+      b De illis, cum volemus.
+  
+    footer.caption
+      .author-info
+        .author-photo
+          img.img-responsive.img-rounded(src="http://placehold.it/60x60")
+        .author-icons
+          .author-icon
+            span User Name
+            span.glyphicon.glyphicon-user
+          .calendar-icon.text-left
+            time(pubdate="pubdate", datetime="2009-10-10T19:15-08:00") ~1 hour ago
+            span.glyphicon.glyphicon-calendar
+      .action-icons
+        .pin-icon
+          span.glyphicon.glyphicon-pushpin
+          span.badge= Math.round(Math.random()*100)
+        .comments-icon
+          span.glyphicon.glyphicon-comment
+          span.badge= Math.round(Math.random()*100)
+  
+  aside.detail-comments.col-xs-12.col-md-4
+  
+    form#comment-form.mb-2
+      textarea(name='comment',id='comment', placeholder='Comentario')
+      input(type='hidden', name='resource-id' id='resource-id' value='0')
+      input(type='hidden', name='user-id' id='user-id' value='user@example.com')
+      input.btn.btn-default(type='submit', value='Comentar')
+  
+    div#detail-comments
+  

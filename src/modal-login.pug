@@ -8,10 +8,10 @@ main.flex-col
   
   h2.text-center.mt-2 Bienvenido. Por favor introduce tus datos:
   
-  form.flex-col.mt-2
-    input.form-control(type="email", placeholder="nombre@ejemplo.com")
-    input.form-control(type="password", placeholder="Contraseña")
-    button.btn.btn-block.mt-1(type="submit") Entrar
+  form.login-form.flex-col.mt-2
+    input#login-email.form-control(type="email", placeholder="nombre@ejemplo.com")
+    input#login-password.form-control(type="password", placeholder="Contraseña")
+    button#login-btn.btn.btn-block.mt-1(type="button") Entrar
   
   p.text-center.mt-2: a(href="#") He olvidado mi contraseña
     

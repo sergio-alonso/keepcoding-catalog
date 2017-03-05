@@ -1,11 +1,28 @@
-article.col-xs-6.col-sm-4.col-md-3.item(id= i)
-  .resource.thumbnail
+article.resource.col-xs-6.col-sm-4.col-md-3.item(resource-id= i)
+  .thumbnail
     header.hidden-xs.caption
       h1.wd200.tooltipfy= "Titulo " + i
-    if Math.round(Math.random() * 100) % 2 == 0
-      img.img-responsive(src="http://placehold.it/148x210")
-    else
-      img.img-responsive(src="http://placehold.it/210x148")
+
+    - var rand = Math.floor(Math.random()*3+1)
+    case rand
+      when 1
+         picture()
+           source.img-center(srcset="//placehold.it/169x240" media="(min-width: 992px)")
+           source.img-center(srcset="//placehold.it/294x360" media="(min-width: 767px)")
+           source.img-center(srcset="//placehold.it/296x420" media="(min-width: 480px)")
+           source.img-center(srcset="//placehold.it/148x210")
+           img.img-center(src="//placehold.it/148x210")
+      when 2
+         picture
+           source.img-center(srcset="//placehold.it/240x169" media="(min-width: 992px)")
+           source.img-center(srcset="//placehold.it/360x294" media="(min-width: 767px)")
+           source.img-center(srcset="//placehold.it/420x296" media="(min-width: 480px)")
+           source.img-center(srcset="//placehold.it/210x148")
+           img.img-center(src="//placehold.it/210x148")
+      default
+        div.video-container
+          iframe(width="210" height="148" src="https://www.youtube.com/embed/e6jTkzf7DZQ?rel=0&loop=1&playlist=e6jTkzf7DZQ" frameborder="0" allowfullscreen)
+
     p.hidden-xs.caption.summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum odio blandit tellus auctor, sed tempor elit commodo.
     footer.hidden-xs.caption
       .author-info
@@ -16,7 +33,7 @@ article.col-xs-6.col-sm-4.col-md-3.item(id= i)
             span Nombre Apellido
             span.glyphicon.glyphicon-user
           .calendar-icon.text-left
-            time.relative-date(pubdate="pubdate", datetime= randomDate)
+            time.relative-date(pubdate="pubdate" datetime= randomDate)
             span.glyphicon.glyphicon-calendar
       .action-icons
         .pin-icon(resource-id= i)

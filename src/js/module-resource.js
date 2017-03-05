@@ -4,7 +4,7 @@ function moduleResource( sandbox ) {
   var _log = "module::resource::",
       _api = "http://" + location.host + "/api",
       _url = _api + "/comments",
-      items = $( "<ul/>", { class: "items" } ),
+      items,
       form;
 
   var onInit = function() {
@@ -24,6 +24,8 @@ function moduleResource( sandbox ) {
     if ( form.is( "#comment-form"  ) ) {
       e.preventDefault();
       sandbox.saveData( _url, form.serialize() );
+      sandbox.log.warn( _log + "onLoadData() Load only current item" );
+      sandbox.loadData( _url, onLoadData );
     }
   };
 
@@ -32,6 +34,8 @@ function moduleResource( sandbox ) {
   };
 
   var onLoadData = function( data ) {
+    sandbox.find( ".items" ).remove();
+    items = $( "<ul/>", { class: "items" } );
     $.each( data, loadItem );
     $( "#detail-comments" ).append( items );
   };

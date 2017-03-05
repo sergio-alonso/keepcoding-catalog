@@ -1,35 +1,42 @@
-function moduleArticle( sandbox ) {
+var moduleArticle = function( sandbox ) {
   "use strict";
 
-  var _log = "module::article::",
-      _container,
-      _pinIcon;
+  var log = "module::article::",
+      id,
+      article,
+      pinIcon;
 
   var onInit = function() {
-    sandbox.log.debug( _log + "oninit()" );
+    sandbox.log.debug( log + "oninit()" );
 
-    _container = sandbox.find( ".resource" );
-    _container.bind( "click", onContainerClick );
+    article = sandbox.find( ".resource" );
+    article.bind( "click", onArticleClick );
 
-    _pinIcon = sandbox.find( ".pin-icon" );
-    _pinIcon.bind( "click", onPinIconClick );
+    pinIcon = sandbox.find( ".pin-icon" );
+    pinIcon.bind( "click", onPinIconClick );
   };
 
   var onDestroy = function() {
-    sandbox.log.debug( _log + "onDestroy()" );
+    sandbox.log.debug( log + "onDestroy()" );
   };
 
   var onPinIconClick = function( event ) {
-    sandbox.log.warn( _log + "onPinIconClick() check if user is loged in" );
-    var self = sandbox.find( this ).attr( "resource-id" );
+    sandbox.log.warn( log + "onPinIconClick() check if user is loged in" );
+
     event.stopPropagation();
-    sandbox.like( self );
-    sandbox.notify( "msg-like-article", { id: self } );
+
+    id = sandbox.find( this ).attr( "resource-id" );
+
+    sandbox.like( id );
+    sandbox.notify( "msg-like-article", { id: id } );
   };
 
-  var onContainerClick = function() {
-    sandbox.log.debug( _log + "onContainerClick()" );
-    sandbox.notify( "msg-show-article" );
+  var onArticleClick = function( event ) {
+    sandbox.log.debug( log + "onArticleClick()" );
+
+    id = sandbox.find( this ).attr( "resource-id" );
+
+    sandbox.notify( "msg-show-article", { id: id } );
   };
 
   return {
@@ -37,6 +44,6 @@ function moduleArticle( sandbox ) {
     destroy: onDestroy
   };
 
-}
+};
 
 module.exports = moduleArticle;

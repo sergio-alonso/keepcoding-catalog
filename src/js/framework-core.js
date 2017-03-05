@@ -9,6 +9,7 @@ var extensionScrollInfinite = require( "./extension-scroll-infinite" );
 var extensionAjax = require( "./extension-ajax" );
 var extensionScrollToTop = require( "./extension-scroll-to-top" );
 var extensionDate = require( "./extension-date" );
+var extensionWordCounter = require( "./extension-word-counter" );
 
 var moduleNavbar = require( "./module-navbar" );
 var moduleCTA = require( "./module-call-to-action" );
@@ -87,6 +88,7 @@ var Core = ( function() {
     this.use( "ajax", extensionAjax );
     this.use( "scroll-to-top", extensionScrollToTop );
     this.use( "date", extensionDate );
+    this.use( "word-counter", extensionWordCounter );
 
     // TODO: add extension dependencies, instead of load in order
     this.load( "log" );

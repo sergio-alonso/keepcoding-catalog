@@ -66,7 +66,9 @@ function moduleSearchResult( sandbox ) {
   var onShowArticle = function() {
     sandbox.log.debug( _log + "onShowArticle()" );
 
-    sandbox.showModal( "#detail-view", "page-resource-detail.html" );
+    sandbox.showModal( "#detail-view", "page-resource-detail.html", function() {
+      sandbox.notify( "msg-showed-article" );
+    } );
   };
 
   var load = function( url ) {

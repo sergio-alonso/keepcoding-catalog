@@ -30,7 +30,7 @@ var extensionWordCounter = function( core ) {
     obj.keyup( function() {
 
       text = obj.val();
-      
+
       if ( text === "" ) {
         wordcount = 0;
       } else {
@@ -45,7 +45,7 @@ var extensionWordCounter = function( core ) {
         $( "#counter-text" ).html( ( options.limit - wordcount ) + " words left" );
       }
     } );
-    
+
   };
 
   core.sandbox.textareaCounter = function( obj, opt ) {

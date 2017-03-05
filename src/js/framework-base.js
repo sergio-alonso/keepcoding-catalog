@@ -1,14 +1,4 @@
 /*
- * Scalable JavaScript Application Architecture
- *
- * Module
- * Sandbox
- * Application Core
- * Base Library
- *
- */
-
-/*
  * The Base Library provides basic funcionality.
  *
  * Application should be loosely coupled to the base library.

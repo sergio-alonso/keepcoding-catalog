@@ -16,9 +16,6 @@ function moduleResource( sandbox ) {
   };
 
   var onShowArticle = function() {
-
-//F    sandbox.textareaCounter( sandbox.find( "#comment" ), { limit: 120 } );
-
     sandbox.find( "#comment" ).textareaCounter( { limit: 120 } );
   };
 

@@ -11,10 +11,18 @@ function extensionJson( core ) {
     core.log.debug( _log + "onDestroy()" );
   };
 
+  var loadData = function( src, success ) {
+    $.getJSON( src, success );
+  };
+
+  core.sandbox.loadData = function( src, success ) {
+    loadData( src, success );
+  };
+
   return {
     init: onInit,
     destroy: onDestroy
   };
 }
 
-module.exports = entensionJson;
+module.exports = extensionJson;

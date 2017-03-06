@@ -1,39 +1,40 @@
-function extensionScrollToTop( core ) {
+function extensionScrollToTop (core) {
+  'use strict'
 
-  var _log = "extension::scroll-to-top::",
-      _window,
-      _scrollToTop;
+  var log = 'extension::scroll-to-top::'
+  var w
+  var scrollToTop
 
-  var onInit = function() {
-    core.log.debug( _log + "onInit()" );
+  var onInit = function () {
+    core.log.debug(log + 'onInit()')
 
-    _window = core.dom.find( window );
-    _window.scroll( onScroll );
+    w = core.dom.find(window)
+    w.scroll(onScroll)
 
-    _scrollToTop = core.dom.find( ".scroll-to-top" );
-    _scrollToTop.bind( "click", onClick );
-  };
+    scrollToTop = core.dom.find('.scroll-to-top')
+    scrollToTop.bind('click', onClick)
+  }
 
-  var onDestroy = function() {
-    core.log.debug( _log + "onDestroy()" );
-  };
+  var onDestroy = function () {
+    core.log.debug(log + 'onDestroy()')
+  }
 
-  var onScroll = function() {
-    if ( _window.scrollTop() > 100 ) {
-      _scrollToTop.fadeIn();
+  var onScroll = function () {
+    if (w.scrollTop() > 100) {
+      scrollToTop.fadeIn()
     } else {
-      _scrollToTop.fadeOut();
+      scrollToTop.fadeOut()
     }
-  };
+  }
 
-  var onClick = function() {
-    core.dom.find( "html, body" ).animate( { scrollTop: 0 }, 600 );
-  };
+  var onClick = function () {
+    core.dom.find('html, body').animate({ scrollTop: 0 }, 600)
+  }
 
   return {
     init: onInit,
     destroy: onDestroy
-  };
+  }
 }
 
-module.exports = extensionScrollToTop;
+module.exports = extensionScrollToTop

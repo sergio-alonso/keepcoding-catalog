@@ -1,62 +1,59 @@
-var extensionWordCounter = function( core ) {
-  "use strict";
+var extensionWordCounter = function (core) {
+  'use strict'
 
-  var _log = "extension::word-counter::";
+  var log = 'extension::word-counter::'
 
-  var onInit = function() {
-    core.log.debug( _log + "onInit()" );
-  };
+  var onInit = function () {
+    core.log.debug(log + 'onInit()')
+  }
 
-  var onDestroy = function() {
-    core.log.debug( _log + "onDestroy()" );
-  };
+  var onDestroy = function () {
+    core.log.debug(log + 'onDestroy()')
+  }
 
-  $.fn.textareaCounter = function( opt ) {
+  $.fn.textareaCounter = function (options) {
+    var obj = core.dom.find(this)
 
-    var obj = $( this );
+    core.log.debug(log + 'textareaCounter() ', obj)
 
-    core.log.debug( _log + "textareaCounter() ", obj );
+    // var defaults = { limit: 100 }
+    // var options = $.extend(defaults, opt)
 
-    var defaults = { limit: 100 },
-        options = $.extend( defaults, opt );
+    var text
+    var wordcount
+    var limited
 
-    var text,
-        wordcount,
-        limited;
+    obj.after("<span style='font-size: 11px; clear: both; margin-top: 3px; display: block;'" +
+               "id='counter-text'>Max. " + options.limit + ' words</span>')
 
-    obj.after( "<span style='font-size: 11px; clear: both; margin-top: 3px; display: block;'" +
-               "id='counter-text'>Max. " + options.limit + " words</span>" );
+    obj.keyup(function () {
+      text = obj.val()
 
-    obj.keyup( function() {
-
-      text = obj.val();
-
-      if ( text === "" ) {
-        wordcount = 0;
+      if (text === '') {
+        wordcount = 0
       } else {
-        wordcount = $.trim( text ).match( /[^ ]+/g ).length;
+        wordcount = text.trim().match(/[^ ]+/g).length
       }
 
-      if ( wordcount > options.limit ) {
-        $( "#counter-text" ).html( '<span style="color: #DD0000;">0 words left</span>' );
-        limited = $.trim( text ).substring( 0, $.trim( text ).length - 2 );
-        $( this ).val( limited );
+      if (wordcount > options.limit) {
+        core.dom.find('#counter-text').html('<span style="color: #DD0000;">0 words left</span>')
+        limited = text.trim().substring(0, text.trim().length - 2)
+        core.dom.find(this).val(limited)
       } else {
-        $( "#counter-text" ).html( ( options.limit - wordcount ) + " words left" );
+        core.dom.find('#counter-text').html((options.limit - wordcount) + ' words left')
       }
-    } );
+    })
+  }
 
-  };
+  core.sandbox.textareaCounter = function (obj, opt) {
 
-  core.sandbox.textareaCounter = function( obj, opt ) {
-
-    //R textareaCounter( obj, opt );
-  };
+    // R textareaCounter( obj, opt );
+  }
 
   return {
     init: onInit,
     destroy: onDestroy
-  };
-};
+  }
+}
 
-module.exports = extensionWordCounter;
+module.exports = extensionWordCounter

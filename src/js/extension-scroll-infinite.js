@@ -1,41 +1,41 @@
-function extensionScrollInfinite( core ) {
-  "use strict";
+function extensionScrollInfinite (core) {
+  'use strict'
 
-  var _log = "extension::scroll-infinite::",
-      _window,
-      _doc;
+  var log = 'extension::scroll-infinite::'
+  var window
+  var doc
 
-  var onInit = function() {
-    core.log.debug( _log + "onInit()" );
+  var onInit = function () {
+    core.log.debug(log + 'onInit()')
 
-    _doc = core.dom.find( document );
+    doc = core.dom.find(document)
 
-    core.log.warn( _log + "onInit() link scroll to window instead of module?" );
-    _window = core.dom.find( window );
+    core.log.warn(log + 'onInit() link scroll to window instead of module?')
+    window = core.dom.find(window)
 
-    core.scroll = this;
-  };
+    core.scroll = this
+  }
 
-  var onDestroy = function() {
-    core.log.debug( _log + "onDestroy()" );
-  };
+  var onDestroy = function () {
+    core.log.debug(log + 'onDestroy()')
+  }
 
-  var _infinite = function( callback ) {
-    if ( _doc.height() - _window.height() == _window.scrollTop() ) {
-      callback();
+  var infinite = function (callback) {
+    if (doc.height() - window.height() === window.scrollTop()) {
+      callback()
     }
-  };
+  }
 
-  core.sandbox.infiniteScroll = function( callback ) {
-    _window.scroll( function() {
-      _infinite( callback );
-    } );
-  };
+  core.sandbox.infiniteScroll = function (callback) {
+    window.scroll(function () {
+      infinite(callback)
+    })
+  }
 
   return {
     init: onInit,
     destroy: onDestroy
-  };
+  }
 }
 
-module.exports = extensionScrollInfinite;
+module.exports = extensionScrollInfinite

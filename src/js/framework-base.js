@@ -34,99 +34,97 @@
 
 // TODO: use Core.log, but not avaliable here, boot() is called after use logs
 
-var Core = require( "./framework-core" );
+var Core = require('./framework-core');
 
-( function() {
-  "use strict";
+(function () {
+  'use strict'
 
-  var _libraries = {};
+  var libraries = {}
 
-  var isBaseReady = function() {
-    var library;
-    for ( library in _libraries ) {
-      if ( _libraries[ library ].loaded === false ) {
-        return false;
+  var isBaseReady = function () {
+    var library
+    for (library in libraries) {
+      if (libraries[ library ].loaded === false) {
+        return false
       }
     }
-    return true;
-  };
+    return true
+  }
 
-  var onLoad = function( name ) {
-    console.log( "base::onLoad() name='" + name + "'" );
-    _libraries[ name ].loaded = true;
-    if ( name === "jquery" ) {
-      load( "bootstrap" );
+  var onLoad = function (name) {
+    console.log("base::onLoad() name='" + name + "'")
+    libraries[ name ].loaded = true
+    if (name === 'jquery') {
+      load('bootstrap')
     }
-    if ( isBaseReady() ) {
-      console.log( "base::isBaseReady() yes, so continue" );
-      Core.boot();
+    if (isBaseReady()) {
+      console.log('base::isBaseReady() yes, so continue')
+      Core.boot()
     }
-  };
+  }
 
-  var onError = function() {
-    console.error( "Something was wrong loading library from CDN. Try to reload the browser." );
+  var onError = function () {
+    console.error('Something was wrong loading library from CDN. Try to reload the browser.')
 
     // TODO: load from local
-  };
+  }
 
-  var insertScript = function( name, src, depend ) {
-    console.log( "base::insertScript() name='" + name + "'" );
-    _libraries[ name ] = {
+  var insertScript = function (name, src, depend) {
+    console.log("base::insertScript() name='" + name + "'")
+    libraries[ name ] = {
       src: src,
       depend: depend,
       loaded: false
-    };
-  };
+    }
+  }
 
-  var load = function( name ) {
+  var load = function (name) {
     try {
-      var script = document.createElement( "script" ),
-          head = document.getElementsByTagName( "script" )[ 0 ];
+      var script = document.createElement('script')
+      var head = document.getElementsByTagName('script')[ 0 ]
 
-      script.type = "text/javascript";
-      script.src = _libraries[ name ].src;
-      script.onreadystatechange = function() {
-        if ( this.readyState == "complete" ) {
-          onLoad( name );
+      script.type = 'text/javascript'
+      script.src = libraries[ name ].src
+      script.onreadystatechange = function () {
+        if (this.readyState === 'complete') {
+          onLoad(name)
         }
-      };
-      script.onload = function() {onLoad( name );};
-      script.onerror = function() {onError();};
+      }
+      script.onload = function () { onLoad(name) }
+      script.onerror = function () { onError() }
 
-      head.parentNode.insertBefore( script, head );
+      head.parentNode.insertBefore(script, head)
+    } catch (err) {
+      console.log(err)
     }
-    catch ( err ) {
-      console.log( err );
-    }
-  };
+  }
 
-  /*R
+  /* R
   var loadAll = function() {
     var library;
-    for ( library in _libraries ) {
+    for ( library in libraries ) {
       load( library );
     }
   };
    */
 
-  insertScript( "jquery", "//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" );
-  insertScript( "bootstrap", "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" );
-  insertScript( "masonry", "//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" );
-  insertScript( "imagesloaded", "//npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js" );
-  insertScript( "momentjs",
-                "//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js" );
+  insertScript('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+  insertScript('bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  insertScript('masonry', '//unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js')
+  insertScript('imagesloaded', '//npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js')
+  insertScript('momentjs',
+                '//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js')
 
-  //LoadAll();
-  load( "jquery" );
+  // LoadAll();
+  load('jquery')
 
   // After load(jquery) load(bootstrap);
-  load( "masonry" );
-  load( "imagesloaded" );
-  load( "momentjs" );
+  load('masonry')
+  load('imagesloaded')
+  load('momentjs')
 
   // TODO: handle dependencies between libraries
-
-} )();
+})()
 
 /*
  * CDN momentjs fallback

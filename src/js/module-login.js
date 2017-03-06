@@ -1,79 +1,78 @@
-var moduleLogin = function( sandbox ) {
-  "use strict";
+var moduleLogin = function (sandbox) {
+  'use strict'
 
-  var _log = "module::login::",
-      _emailField,
-      _passwordField,
-      _loginButton;
+  var log = 'module::login::'
+  var emailField
+  var passwordField
+  var loginButton
 
-  function onInit() {
-    sandbox.log.debug( _log + "onInit()" );
+  function onInit () {
+    sandbox.log.debug(log + 'onInit()')
 
-    sandbox.subscribe( [
-      "msg-login-request"
-    ], _onLoginEvent );
+    sandbox.subscribe([
+      'msg-login-request'
+    ], onLoginEvent)
   }
 
-  function onDestroy() {
-    sandbox.log.debug( _log + "destroy()" );
+  function onDestroy () {
+    sandbox.log.debug(log + 'destroy()')
   }
 
-  function _loginButtonCallback() {
-    sandbox.log.debug( _log + "_loginButtonCallback()" );
+  function loginButtonCallback () {
+    sandbox.log.debug(log + 'loginButtonCallback()')
 
-    _emailField = sandbox.find( "#login-email" );
-    _passwordField = sandbox.find( "#login-password" );
+    emailField = sandbox.find('#login-email')
+    passwordField = sandbox.find('#login-password')
 
-    var valid = true;
+    var valid = true
 
-    if ( false === sandbox.isValid( _emailField.val(), "email-rule" ) ) {
-      sandbox.showError( "#login-email", "¿Seguro que este es tu correo?" );
-      valid = false;
+    if (sandbox.isValid(emailField.val(), 'email-rule') === false) {
+      sandbox.showError('#login-email', '¿Seguro que este es tu correo?')
+      valid = false
     } else {
-      sandbox.removeError( "#login-email" );
+      sandbox.removeError('#login-email')
     }
 
-    if ( false === sandbox.isValid( _passwordField.val(), "password-rule" ) ) {
-      sandbox.showError( "#login-password", "Poco segura, usa, mayusculas, minusculas y numeros." );
-      valid = false;
+    if (sandbox.isValid(passwordField.val(), 'password-rule') === false) {
+      sandbox.showError('#login-password', 'Poco segura, usa, mayusculas, minusculas y numeros.')
+      valid = false
     } else {
-      sandbox.removeError( "#login-password" );
+      sandbox.removeError('#login-password')
     }
 
-    if ( valid ) {
-      sandbox.hideModal( "#login-view" );
+    if (valid) {
+      sandbox.hideModal('#login-view')
 
-      sandbox.log.warn( _log + "_loginButtonCallback() password must be encrypted before store" );
-      sandbox.notify( "msg-login-submit",
-                      { email:_emailField.val(), password:_passwordField.val() } );
+      sandbox.log.warn(log + 'loginButtonCallback() password must be encrypted before store')
+      sandbox.notify('msg-login-submit',
+                      { email: emailField.val(), password: passwordField.val() })
     }
   }
 
-  function _showModalCallback() {
-    sandbox.log.debug( _log + "_showModalCallback()" );
+  function showModalCallback () {
+    sandbox.log.debug(log + 'showModalCallback()')
 
-    _loginButton = sandbox.find( "#login-btn" );
-    _loginButton.bind( "click", _loginButtonCallback );
+    loginButton = sandbox.find('#login-btn')
+    loginButton.bind('click', loginButtonCallback)
   }
 
-  function _hideModalCallback() {
-    sandbox.log.debug( _log + "_hideModalCallback()" );
+  function hideModalCallback () {
+    sandbox.log.debug(log + 'hideModalCallback()')
 
-    _loginButton.unbind( "click" );
+    loginButton.unbind('click')
   }
 
-  function _onLoginEvent() {
-    sandbox.log.debug( _log + "_onLoginEvent()" );
+  function onLoginEvent () {
+    sandbox.log.debug(log + 'onLoginEvent()')
 
-    sandbox.showModal( "#login-view", "modal-login.html",
-                       _showModalCallback, _hideModalCallback );
+    sandbox.showModal('#login-view', 'modal-login.html',
+                       showModalCallback, hideModalCallback)
   }
 
   return {
     init: onInit,
     destroy: onDestroy
-  };
+  }
+}
 
-};
-
-module.exports = moduleLogin;
+module.exports = moduleLogin

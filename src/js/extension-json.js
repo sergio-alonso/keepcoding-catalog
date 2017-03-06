@@ -1,44 +1,44 @@
-function extensionJson( core ) {
-  "use strict";
+function extensionJson (core) {
+  'use strict'
 
-  var _log = "extension::json::";
+  var log = 'extension::json::'
 
-  var onInit = function() {
-    core.log.debug( _log + "onInit()" );
-  };
+  var onInit = function () {
+    core.log.debug(log + 'onInit()')
+  }
 
-  var onDestroy = function() {
-    core.log.debug( _log + "onDestroy()" );
-  };
+  var onDestroy = function () {
+    core.log.debug(log + 'onDestroy()')
+  }
 
-  var saveData = function( url, data ) {
-    $.ajax( {
-      type: "POST",
+  var saveData = function (url, data) {
+    $.ajax({
+      type: 'POST',
       url: url,
-      dataType: "json",
+      dataType: 'json',
       data: data,
-      success: function( data ) {
-        alert( "Gracias! Lo tenemos." );
+      success: function (data) {
+        window.alert('Gracias! Lo tenemos.')
       }
-    } );
-  };
+    })
+  }
 
-  var loadData = function( src, success ) {
-    $.getJSON( src, success );
-  };
+  var loadData = function (src, success) {
+    $.getJSON(src, success)
+  }
 
-  core.sandbox.loadData = function( src, success ) {
-    loadData( src, success );
-  };
+  core.sandbox.loadData = function (src, success) {
+    loadData(src, success)
+  }
 
-  core.sandbox.saveData = function( url, data ) {
-    saveData( url, data );
-  };
+  core.sandbox.saveData = function (url, data) {
+    saveData(url, data)
+  }
 
   return {
     init: onInit,
     destroy: onDestroy
-  };
+  }
 }
 
-module.exports = extensionJson;
+module.exports = extensionJson

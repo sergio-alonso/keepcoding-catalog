@@ -1,51 +1,50 @@
-function extensionDate( core ) {
-  "use strict";
+function extensionDate (core) {
+  'use strict'
 
-  var _log = "extension::date::";
+  var log = 'extension::date::'
 
-  var onInit = function() {
-    core.log.debug( _log + "onInit()" );
+  var onInit = function () {
+    core.log.debug(log + 'onInit()')
 
-    window.moment.updateLocale( "es", {
+    window.moment.updateLocale('es', {
       calendar: {
-        lastWeek: "dddd",
-        sameElse: "D MMM YYYY"
+        lastWeek: 'dddd',
+        sameElse: 'D MMM YYYY'
       }
-    } );
+    })
 
-    core.date = this;
-  };
+    core.date = this
+  }
 
-  var onDestroy = function() {
-    core.log.debug( _log + "onDestroy()" );
-  };
+  var onDestroy = function () {
+    core.log.debug(log + 'onDestroy()')
+  }
 
-  var getRelativeDate = function( date ) {
+  var getRelativeDate = function (date) {
+    var past = window.moment(date)
+    var diff = window.moment().diff(past, 'seconds')
 
-    var past = moment( date ),
-        diff = moment().diff( past, "seconds" );
-
-    if ( diff < 0 ) {
-      return past.calendar();
-    } else if ( diff < 60 ) {
-      return diff + " segundos";
-    } else if ( diff < 3600 ) {
-      return past.fromNow();
-    } else if ( diff < 86400 ) {
-      return past.fromNow();
+    if (diff < 0) {
+      return past.calendar()
+    } else if (diff < 60) {
+      return diff + ' segundos'
+    } else if (diff < 3600) {
+      return past.fromNow()
+    } else if (diff < 86400) {
+      return past.fromNow()
     } else {
-      return past.calendar();
+      return past.calendar()
     }
-  };
+  }
 
-  core.sandbox.getRelativeDate = function( i, e ) {
-    return getRelativeDate( i, e );
-  };
+  core.sandbox.getRelativeDate = function (i, e) {
+    return getRelativeDate(i, e)
+  }
 
   return {
     init: onInit,
     destroy: onDestroy
-  };
+  }
 }
 
-module.exports = extensionDate;
+module.exports = extensionDate

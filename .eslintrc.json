@@ -1,7 +1,0 @@
-{
-    "extends": "jquery",
-    "plugins": [
-        "jquery",
-        "promise"
-    ]
-}

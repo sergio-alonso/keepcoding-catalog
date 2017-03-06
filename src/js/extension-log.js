@@ -1,34 +1,34 @@
-function extensionLog( core ) {
-  "use strict";
+function extensionLog (core) {
+  'use strict'
 
-  var _log = "extension::log::";
+  var _log = 'extension::log::'
 
-  var onInit = function() {
-    console.log( _log + "onInit()" );
+  var onInit = function () {
+    console.log(_log + 'onInit()')
 
-    core.log = this;
-    core.sandbox.log = this;
-  };
+    core.log = this
+    core.sandbox.log = this
+  }
 
-  var onDestroy = function() {
-    console.log( _log + "onDestroy()" );
-  };
+  var onDestroy = function () {
+    console.log(_log + 'onDestroy()')
+  }
 
-  var debug = function( message, data ) {
-    if ( typeof data !== "undefined" ) {
-      console.log( message, data );
-      return;
+  var debug = function (message, data) {
+    if (typeof data !== 'undefined') {
+      console.log(message, data)
+      return
     }
-    console.log( message );
-  };
+    console.log(message)
+  }
 
-  var warn = function( message ) {
-    console.warn( message );
-  };
+  var warn = function (message) {
+    console.warn(message)
+  }
 
-  var error = function( message ) {
-    console.error( message );
-  };
+  var error = function (message) {
+    console.error(message)
+  }
 
   return {
     init: onInit,
@@ -36,7 +36,7 @@ function extensionLog( core ) {
     debug: debug,
     warn: warn,
     error: error
-  };
+  }
 }
 
-module.exports = extensionLog;
+module.exports = extensionLog

@@ -1,79 +1,78 @@
-var moduleJoin = function( sandbox ) {
-  "use strict";
+var moduleJoin = function (sandbox) {
+  'use strict'
 
-  var _log = "module::join::",
-      _emailField,
-      _passwordField,
-      _joinButton;
+  var log = 'module::join::'
+  var emailField
+  var passwordField
+  var joinButton
 
-  function onInit() {
-    sandbox.log.debug( _log + "onInit()" );
+  function onInit () {
+    sandbox.log.debug(log + 'onInit()')
 
-    sandbox.subscribe( [
-      "msg-join-request"
-    ], _onJoinEvent );
+    sandbox.subscribe([
+      'msg-join-request'
+    ], onJoinEvent)
   }
 
-  function onDestroy() {
-    sandbox.log.debug( _log + "destroy()" );
+  function onDestroy () {
+    sandbox.log.debug(log + 'destroy()')
   }
 
-  function _joinButtonCallback() {
-    sandbox.log.debug( _log + "_joinButtonCallback()" );
+  function joinButtonCallback () {
+    sandbox.log.debug(log + 'joinButtonCallback()')
 
-    _emailField = sandbox.find( "#email" );
-    _passwordField = sandbox.find( "#password" );
+    emailField = sandbox.find('#email')
+    passwordField = sandbox.find('#password')
 
-    var valid = true;
+    var valid = true
 
-    if ( false === sandbox.isValid( _emailField.val(), "email-rule" ) ) {
-      sandbox.showError( "#email", "¿Seguro que este es tu correo?" );
-      valid = false;
+    if (sandbox.isValid(emailField.val(), 'email-rule') === false) {
+      sandbox.showError('#email', '¿Seguro que este es tu correo?')
+      valid = false
     } else {
-      sandbox.removeError( "#email" );
+      sandbox.removeError('#email')
     }
 
-    if ( false === sandbox.isValid( _passwordField.val(), "password-rule" ) ) {
-      sandbox.showError( "#password", "Poco segura, usa, mayusculas, minusculas y numeros." );
-      valid = false;
+    if (sandbox.isValid(passwordField.val(), 'password-rule') === false) {
+      sandbox.showError('#password', 'Poco segura, usa, mayusculas, minusculas y numeros.')
+      valid = false
     } else {
-      sandbox.removeError( "#password" );
+      sandbox.removeError('#password')
     }
 
-    if ( valid ) {
-      sandbox.hideModal( "#register-view" );
+    if (valid) {
+      sandbox.hideModal('#register-view')
 
-      sandbox.log.warn( _log + "_joinButtonCallback() password must be encrypted before store" );
-      sandbox.notify( "msg-join-submit",
-                      { email:_emailField.val(), password:_passwordField.val() } );
+      sandbox.log.warn(log + 'joinButtonCallback() password must be encrypted before store')
+      sandbox.notify('msg-join-submit',
+                      { email: emailField.val(), password: passwordField.val() })
     }
   }
 
-  function _showModalCallback() {
-    sandbox.log.debug( _log + "_showModalCallback()" );
+  function showModalCallback () {
+    sandbox.log.debug(log + 'showModalCallback()')
 
-    _joinButton = sandbox.find( "#join-btn" );
-    _joinButton.bind( "click", _joinButtonCallback );
+    joinButton = sandbox.find('#join-btn')
+    joinButton.bind('click', joinButtonCallback)
   }
 
-  function _hideModalCallback() {
-    sandbox.log.debug( _log + "_hideModalCallback()" );
+  function hideModalCallback () {
+    sandbox.log.debug(log + 'hideModalCallback()')
 
-    _joinButton.unbind( "click" );
+    joinButton.unbind('click')
   }
 
-  function _onJoinEvent() {
-    sandbox.log.debug( _log + "_onJoinEvent()" );
+  function onJoinEvent () {
+    sandbox.log.debug(log + 'onJoinEvent()')
 
-    sandbox.showModal( "#register-view", "modal-register.html",
-                       _showModalCallback, _hideModalCallback );
+    sandbox.showModal('#register-view', 'modal-register.html',
+                       showModalCallback, hideModalCallback)
   }
 
   return {
     init: onInit,
     destroy: onDestroy
-  };
+  }
+}
 
-};
-
-module.exports = moduleJoin;
+module.exports = moduleJoin
